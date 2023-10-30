@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="default">
+        <class>com.hcmute.team7.azshop.entity.Cart</class>
+        <class>com.hcmute.team7.azshop.entity.CartItem</class>
+        <class>com.hcmute.team7.azshop.entity.Category</class>
+        <class>com.hcmute.team7.azshop.entity.Delivery</class>
+        <class>com.hcmute.team7.azshop.entity.Orders</class>
+        <class>com.hcmute.team7.azshop.entity.OrderItem</class>
+        <class>com.hcmute.team7.azshop.entity.Product</class>
+        <class>com.hcmute.team7.azshop.entity.Review</class>
+        <class>com.hcmute.team7.azshop.entity.Store</class>
+        <class>com.hcmute.team7.azshop.entity.Style</class>
+        <class>com.hcmute.team7.azshop.entity.StyleValue</class>
+        <class>com.hcmute.team7.azshop.entity.SubCategory</class>
+        <class>com.hcmute.team7.azshop.entity.Transaction</class>
+        <class>com.hcmute.team7.azshop.entity.User</class>
+        <class>com.hcmute.team7.azshop.entity.UserFollowProduct</class>
+        <class>com.hcmute.team7.azshop.entity.UserFollowProductKey</class>
+        <class>com.hcmute.team7.azshop.entity.UserFollowStore</class>
+        <class>com.hcmute.team7.azshop.entity.UserFollowStoreKey</class>
+
+        <properties>
+            <!-- Các thông tin kết nối đến cơ sở dữ liệu MySQL -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/azshop"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="123456"/>
+
+            <!-- Cài đặt cho Hibernate (JPA provider) -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Các cài đặt khác cho Hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <property name = "eclipselink.logging.level" value = "FINE"/>
+            <property name = "eclipselink.ddl-generation" value="create-tables"/>
+        </properties>
+    </persistence-unit>
+</persistence>
