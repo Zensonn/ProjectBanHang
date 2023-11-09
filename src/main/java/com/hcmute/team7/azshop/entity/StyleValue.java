@@ -1,16 +1,21 @@
 package com.hcmute.team7.azshop.entity;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Where(clause = "isDeleted = false")
 public class StyleValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(columnDefinition = "nvarchar(255)", nullable = false)
     private String name;
-    private boolean isDelete = false;
+    private boolean isDeleted = false;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
@@ -19,36 +24,41 @@ public class StyleValue {
     @ManyToOne
     @JoinColumn(name = "style_id")
     private Style style;
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-    @ManyToOne
-    @JoinColumn(name = "cart_item_id")
-    private CartItem cartItem;
-    @ManyToOne
-    @JoinColumn(name = "order_item_id")
-    private OrderItem orderItem;
+    @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
+    private Set<Product> products;
+    @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
+    private Set<CartItem> cartItems;
+    @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
+    private Set<OrderItem> orderItems;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public StyleValue() {
     }
 
-    public StyleValue(int id, String name, boolean isDelete, Date createdAt, Date updatedAt, Style style, Product product, CartItem cartItem, OrderItem orderItem) {
+    public StyleValue(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Style style, Set<Product> products, Set<CartItem> cartItems, Set<OrderItem> orderItems) {
         this.id = id;
         this.name = name;
-        this.isDelete = isDelete;
+        this.isDeleted = isDeleted;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.style = style;
-        this.product = product;
-        this.cartItem = cartItem;
-        this.orderItem = orderItem;
+        this.products = products;
+        this.cartItems = cartItems;
+        this.orderItems = orderItems;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,12 +70,12 @@ public class StyleValue {
         this.name = name;
     }
 
-    public boolean isDelete() {
-        return isDelete;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
-    public void setDelete(boolean delete) {
-        isDelete = delete;
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 
     public Date getCreatedAt() {
@@ -92,27 +102,27 @@ public class StyleValue {
         this.style = style;
     }
 
-    public Product getProduct() {
-        return product;
+    public Set<Product> getProducts() {
+        return products;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 
-    public CartItem getCartItem() {
-        return cartItem;
+    public Set<CartItem> getCartItems() {
+        return cartItems;
     }
 
-    public void setCartItem(CartItem cartItem) {
-        this.cartItem = cartItem;
+    public void setCartItems(Set<CartItem> cartItems) {
+        this.cartItems = cartItems;
     }
 
-    public OrderItem getOrderItem() {
-        return orderItem;
+    public Set<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
-    public void setOrderItem(OrderItem orderItem) {
-        this.orderItem = orderItem;
+    public void setOrderItems(Set<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 }

@@ -45,6 +45,14 @@ public class Orders {
     @OneToOne
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public Orders() {
     }

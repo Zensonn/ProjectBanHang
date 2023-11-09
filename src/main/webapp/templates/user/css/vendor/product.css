@@ -1,0 +1,40 @@
+.shop_product {
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    margin-right: 10px;
+}
+.right {
+    font-family: "Arial", sans-serif;
+    color: black;
+}
+.right .Trang_Thai_Hoat_Dong{
+    color: var(--color-body);
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+.button1, .button2 {
+    width: 130px;
+    height: 40px;
+}
+.Information {
+    display: flex;
+    flex-direction: column;
+}
+
+.R7Q8ES {
+    display: flex;
+    justify-content: space-between;
+}
+.R7Q8ES span{
+    color: red;
+}
+.mid-row, .bot-row {
+    margin-top: 20px;
+}
+
+

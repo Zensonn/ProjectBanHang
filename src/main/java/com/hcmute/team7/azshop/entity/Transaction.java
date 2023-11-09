@@ -21,6 +21,14 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public Transaction() {
     }
