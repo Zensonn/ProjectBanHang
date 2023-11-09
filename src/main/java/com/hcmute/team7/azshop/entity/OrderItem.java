@@ -26,13 +26,21 @@ public class OrderItem {
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
-    @OneToMany(mappedBy = "orderItem")
-    private Set<StyleValue> styleValues;
-
+    @ManyToOne
+    @JoinColumn(name = "style_value_id")
+    private StyleValue styleValue;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
     public OrderItem() {
     }
 
-    public OrderItem(Long id, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Orders orders, Product product, Set<StyleValue> styleValues) {
+    public OrderItem(Long id, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Orders orders, Product product, StyleValue styleValue) {
         this.id = id;
         this.styleValueIds = styleValueIds;
         this.count = count;
@@ -40,7 +48,7 @@ public class OrderItem {
         this.updatedAt = updatedAt;
         this.orders = orders;
         this.product = product;
-        this.styleValues = styleValues;
+        this.styleValue = styleValue;
     }
 
     public Long getId() {
@@ -83,11 +91,11 @@ public class OrderItem {
         this.updatedAt = updatedAt;
     }
 
-    public Orders getOrder() {
+    public Orders getOrders() {
         return orders;
     }
 
-    public void setOrder(Orders orders) {
+    public void setOrders(Orders orders) {
         this.orders = orders;
     }
 
@@ -99,11 +107,11 @@ public class OrderItem {
         this.product = product;
     }
 
-    public Set<StyleValue> getStyleValues() {
-        return styleValues;
+    public StyleValue getStyleValue() {
+        return styleValue;
     }
 
-    public void setStyleValues(Set<StyleValue> styleValues) {
-        this.styleValues = styleValues;
+    public void setStyleValue(StyleValue styleValue) {
+        this.styleValue = styleValue;
     }
 }

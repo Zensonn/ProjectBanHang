@@ -12,7 +12,6 @@
         <class>com.hcmute.team7.azshop.entity.Store</class>
         <class>com.hcmute.team7.azshop.entity.Style</class>
         <class>com.hcmute.team7.azshop.entity.StyleValue</class>
-        <class>com.hcmute.team7.azshop.entity.SubCategory</class>
         <class>com.hcmute.team7.azshop.entity.Transaction</class>
         <class>com.hcmute.team7.azshop.entity.User</class>
         <class>com.hcmute.team7.azshop.entity.UserFollowProduct</class>

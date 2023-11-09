@@ -1,22 +1,33 @@
 package com.hcmute.team7.azshop.entity;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Where(clause = "isDeleted = false")
 public class Style {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(columnDefinition = "nvarchar(255)", nullable = false)
     private String name;
-    private boolean isDelete = false;
+    private boolean isDeleted = false;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -26,21 +37,21 @@ public class Style {
     public Style() {
     }
 
-    public Style(int id, String name, boolean isDelete, Date createdAt, Date updatedAt, Category category, List<StyleValue> styleValues) {
+    public Style(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Category category, List<StyleValue> styleValues) {
         this.id = id;
         this.name = name;
-        this.isDelete = isDelete;
+        this.isDeleted = isDeleted;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.category = category;
         this.styleValues = styleValues;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,12 +63,12 @@ public class Style {
         this.name = name;
     }
 
-    public boolean isDelete() {
-        return isDelete;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
-    public void setDelete(boolean delete) {
-        isDelete = delete;
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 
     public Date getCreatedAt() {

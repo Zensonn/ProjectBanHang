@@ -1,16 +1,19 @@
 package com.hcmute.team7.azshop.entity;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @Entity
+@Where(clause = "isDeleted = false")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(columnDefinition = "nvarchar(255)", nullable = false, unique = true)
+    @Column(columnDefinition = "nvarchar(255)", nullable = false)
     private String name;
     private String image;
     private Boolean isDeleted = false;
@@ -19,8 +22,14 @@ public class Category {
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<SubCategory> subCategories;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<Style> styles;
     @OneToMany(mappedBy =  "category", cascade = CascadeType.ALL)
@@ -29,16 +38,13 @@ public class Category {
     public Category() {
     }
 
-    public Category(Long id, String name, String image, Boolean isDeleted, Date createdAt, Date updatedAt, Set<SubCategory> subCategories, Set<Style> styles, List<Product> products) {
+    public Category(Long id, String name, String image, Boolean isDeleted, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.isDeleted = isDeleted;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.subCategories = subCategories;
-        this.styles = styles;
-        this.products = products;
     }
 
     public Long getId() {
@@ -87,14 +93,6 @@ public class Category {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public Set<SubCategory> getSubCategories() {
-        return subCategories;
-    }
-
-    public void setSubCategories(Set<SubCategory> subCategories) {
-        this.subCategories = subCategories;
     }
 
     public Set<Style> getStyles() {

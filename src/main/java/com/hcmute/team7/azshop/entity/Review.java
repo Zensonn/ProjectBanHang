@@ -28,6 +28,14 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Orders orders;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public Review() {
     }
