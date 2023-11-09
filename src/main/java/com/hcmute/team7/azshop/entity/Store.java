@@ -35,6 +35,14 @@ public class Store {
     private Set<Orders> orders;
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviews;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public Store() {
     }

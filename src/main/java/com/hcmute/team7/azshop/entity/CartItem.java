@@ -9,8 +9,7 @@ import java.util.Set;
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    private Long cartItemId;
     @ElementCollection
     @CollectionTable(joinColumns = @JoinColumn(name = "cart_item_id"))
     private List<Long> styleValueIds;
@@ -27,29 +26,38 @@ public class CartItem {
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
-    @OneToMany(mappedBy = "cartItem", cascade = CascadeType.ALL)
-    private Set<StyleValue> styleValues;
+    @ManyToOne
+    @JoinColumn(name = "style_value_id")
+    private StyleValue styleValue;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public CartItem() {
     }
 
-    public CartItem(Long id, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Cart cart, Product product, Set<StyleValue> styleValues) {
-        this.id = id;
+    public CartItem(Long cartItemId, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Cart cart, Product product, StyleValue styleValue) {
+        this.cartItemId = cartItemId;
         this.styleValueIds = styleValueIds;
         this.count = count;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.cart = cart;
         this.product = product;
-        this.styleValues = styleValues;
+        this.styleValue = styleValue;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCartItemId() {
+        return cartItemId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCartItemId(Long cartItemId) {
+        this.cartItemId = cartItemId;
     }
 
     public List<Long> getStyleValueIds() {
@@ -100,11 +108,11 @@ public class CartItem {
         this.product = product;
     }
 
-    public Set<StyleValue> getStyleValues() {
-        return styleValues;
+    public StyleValue getStyleValue() {
+        return styleValue;
     }
 
-    public void setStyleValues(Set<StyleValue> styleValues) {
-        this.styleValues = styleValues;
+    public void setStyleValue(StyleValue styleValue) {
+        this.styleValue = styleValue;
     }
 }

@@ -1,0 +1,11 @@
+
+h
+java:S1192b"FDefine a constant instead of duplicating this literal "image" 4 times.(ó«òÒüÿÿÿÿ8áŸœèº1
+f
+java:S1192="IDefine a constant instead of duplicating this literal "pageSize" 3 times.(¾ÂÈù8È¥­îº1
+j
+java:S1192d"MDefine a constant instead of duplicating this literal "\\category\\" 4 times.(£ä¸ÿ8àŸœèº1
+q
+java:S4042"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ë“«øÿÿÿÿ8² œèº1
+V	java:S106"9Replace this use of System.out or System.err by a logger.(°œú8² œèº1
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ÏáŞçşÿÿÿÿ8² œèº1

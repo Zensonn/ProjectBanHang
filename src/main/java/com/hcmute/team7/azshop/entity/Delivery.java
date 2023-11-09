@@ -7,7 +7,7 @@ import java.util.Date;
 public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long deliveryId;
     @Column(columnDefinition = "nvarchar(255)", nullable = false, unique = true)
     private String name;
     @Column(nullable = false, length = 1000)
@@ -22,12 +22,20 @@ public class Delivery {
     private Date updatedAt;
     @OneToOne(mappedBy = "delivery")
     private Orders orders;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     public Delivery() {
     }
 
-    public Delivery(Long id, String name, String description, Double price, Boolean isDeleted, Date createdAt, Date updatedAt, Orders orders) {
-        this.id = id;
+    public Delivery(Long deliveryId, String name, String description, Double price, Boolean isDeleted, Date createdAt, Date updatedAt, Orders orders) {
+        this.deliveryId = deliveryId;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -37,12 +45,20 @@ public class Delivery {
         this.orders = orders;
     }
 
-    public Long getId() {
-        return id;
+    public Long getDeliveryId() {
+        return deliveryId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setDeliveryId(Long deliveryId) {
+        this.deliveryId = deliveryId;
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public String getName() {
