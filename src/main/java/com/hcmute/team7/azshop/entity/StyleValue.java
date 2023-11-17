@@ -25,8 +25,6 @@ public class StyleValue {
     @JoinColumn(name = "style_id")
     private Style style;
     @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
-    private Set<Product> products;
-    @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
     private Set<CartItem> cartItems;
     @OneToMany(mappedBy = "styleValue", cascade = CascadeType.ALL)
     private Set<OrderItem> orderItems;
@@ -42,14 +40,13 @@ public class StyleValue {
     public StyleValue() {
     }
 
-    public StyleValue(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Style style, Set<Product> products, Set<CartItem> cartItems, Set<OrderItem> orderItems) {
+    public StyleValue(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Style style, Set<CartItem> cartItems, Set<OrderItem> orderItems) {
         this.id = id;
         this.name = name;
         this.isDeleted = isDeleted;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.style = style;
-        this.products = products;
         this.cartItems = cartItems;
         this.orderItems = orderItems;
     }
@@ -100,14 +97,6 @@ public class StyleValue {
 
     public void setStyle(Style style) {
         this.style = style;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
     }
 
     public Set<CartItem> getCartItems() {

@@ -5,7 +5,7 @@
         <pattern>/admin*</pattern>
     </decorator>
 
-    <decorator name="vendor" page="vendor.jsp">
+    <decorator name="vendor" page="vendor/vendor.jsp">
         <pattern>/vendor*</pattern>
     </decorator>
 

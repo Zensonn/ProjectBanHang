@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/common/user/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/category/category-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/category" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/add-order.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/add-product.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/order.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor/order" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/product/product-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor/product" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style-value/style-value-form.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style-value" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style/style-form.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style/style-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor/style" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vendor/vendor.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vendor" />
+      </map>
+    </option>
+  </component>
+</project>

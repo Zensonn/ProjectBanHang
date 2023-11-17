@@ -34,10 +34,12 @@ public class Style {
     @OneToMany(mappedBy = "style")
     private List<StyleValue> styleValues;
 
+    @OneToMany(mappedBy = "style")
+    private List<Product> products;
     public Style() {
     }
 
-    public Style(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Category category, List<StyleValue> styleValues) {
+    public Style(Long id, String name, boolean isDeleted, Date createdAt, Date updatedAt, Category category, List<StyleValue> styleValues, List<Product> products) {
         this.id = id;
         this.name = name;
         this.isDeleted = isDeleted;
@@ -45,6 +47,7 @@ public class Style {
         this.updatedAt = updatedAt;
         this.category = category;
         this.styleValues = styleValues;
+        this.products = products;
     }
 
     public Long getId() {
@@ -101,5 +104,13 @@ public class Style {
 
     public void setStyleValues(List<StyleValue> styleValues) {
         this.styleValues = styleValues;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
