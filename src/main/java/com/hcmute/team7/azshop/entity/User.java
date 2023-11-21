@@ -12,13 +12,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(columnDefinition = "nvarchar(255)", nullable = false)
-    private String firstname;
+    private String userName;
     @Column(columnDefinition = "nvarchar(255)", nullable = false)
-    private String lastname;
+    private String fullName;
     @Column(unique = true)
     private String email;
     @Column(unique = true)
     private String phone;
+    private String code;
     private Boolean isEmailActive = false;
     @Column(nullable = false)
     private String password;
@@ -54,12 +55,30 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstname, String lastname, String email, String phone, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Set<Cart> carts, Set<Orders> orders, Set<Review> reviews) {
+    public User(String userName, String fullName, String email, String code) {
+        this.userName = userName;
+        this.fullName = fullName;
+        this.email = email;
+        this.code = code;
+    }
+
+    public User(String userName, String fullName, String email, String code, Boolean isEmailActive, String password, Role role) {
+        this.userName = userName;
+        this.fullName = fullName;
+        this.email = email;
+        this.code = code;
+        this.isEmailActive = isEmailActive;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(Long id, String userName, String fullName, String email, String phone, String code, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Set<Cart> carts, Set<Orders> orders, Set<Review> reviews) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.userName = userName;
+        this.fullName = fullName;
         this.email = email;
         this.phone = phone;
+        this.code = code;
         this.isEmailActive = isEmailActive;
         this.password = password;
         this.role = role;
@@ -82,20 +101,20 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -112,6 +131,14 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Boolean getEmailActive() {
