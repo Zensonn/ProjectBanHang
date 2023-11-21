@@ -36,8 +36,11 @@
                                 <a href="#">Help</a>
                             </li>
                             <li>
-                                <a href='<c:url value="/login"/>'>Đăng nhập</a>
+                                <a href='<c:url value="/vendor/product"/>'>Kênh người bán </a>
                             </li>
+<%--                            <li>--%>
+<%--                                <a href='<c:url value="/login"/>'>Đăng nhập</a>--%>
+<%--                            </li>--%>
                             <li>
                                 <a href='<c:url value="/views/user/register.jsp"/>'>Đăng ký</a>
                             </li>

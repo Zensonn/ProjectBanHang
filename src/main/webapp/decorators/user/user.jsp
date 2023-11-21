@@ -23,6 +23,7 @@
     <link rel="stylesheet" href='<c:url value="/templates/user/css/vendor/product.css"/>'>
     <link rel="stylesheet" href='<c:url value="/templates/user/css/vendor/base.css"/>'>
     <link rel="stylesheet" href='<c:url value="/templates/user/css/style.min.css"/>'>
+
 </head>
 <body class="sticky-header">
     <%@ include file="/common/user/header.jsp" %>
@@ -51,6 +52,8 @@
     <script src='<c:url value="/templates/user/js/vendor/isotope.pkgd.min.js"/>'></script>
     <script src='<c:url value="/templates/user/js/vendor/counterup.js"/>'></script>
     <script src='<c:url value="/templates/user/js/vendor/waypoints.min.js"/>'></script>
+    <script src='<c:url value="/templates/vendor/js/vendor.js"/>'></script>
+
 
     <!-- Main JS -->
     <script src='<c:url value="/templates/user/js/main.js"/>'></script>
