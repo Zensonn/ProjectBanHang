@@ -9,13 +9,25 @@
         <pattern>/vendor*</pattern>
     </decorator>
 
-    <decorator name="trang-chu" page="user/user-home.jsp">
-        <pattern>/trang-chu</pattern>
+    <decorator name="home" page="user/user-home.jsp">
+        <pattern>/home</pattern>
     </decorator>
 
-    <decorator name="login" page="user/user-login.jsp">
-        <pattern>/login</pattern>
+    <decorator name="login" page="/decorators/web/account.jsp">
+        <pattern>/buyer/*</pattern>
     </decorator>
+
+<!--    <decorator name="register" page="/decorators/web/register.jsp">-->
+<!--        <pattern>/register</pattern>-->
+<!--    </decorator>-->
+
+<!--    <decorator name="forgot" page="/decorators/web/forgot-password.jsp">-->
+<!--        <pattern>/forgot</pattern>-->
+<!--    </decorator>-->
+
+<!--    <decorator name="verifyCode" page="/decorators/web/verify.jsp">-->
+<!--        <pattern>/verifyCode</pattern>-->
+<!--    </decorator>-->
 
     <decorator name="user" page="user/user.jsp">
         <pattern>/*</pattern>

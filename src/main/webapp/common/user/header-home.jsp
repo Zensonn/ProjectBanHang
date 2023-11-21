@@ -8,10 +8,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-sm-3 col-5">
                     <div class="header-brand">
-                        <a href='<c:url value="/trang-chu"/>' class="logo logo-dark">
+                        <a href='<c:url value="/home"/>' class="logo logo-dark">
                             <img src='<c:url value="/templates/user/images/logo/logo.png"/>' alt="Site Logo">
                         </a>
-                        <a href='<c:url value="/trang-chu"/>' class="logo logo-light">
+                        <a href='<c:url value="/home"/>' class="logo logo-light">
                             <img src='<c:url value="/templates/user/images/logo/logo-light.png"/>' alt="Site Logo">
                         </a>
                     </div>
@@ -300,13 +300,13 @@
                     <nav class="mainmenu-nav">
                         <button class="mobile-close-btn mobile-nav-toggler"><i class="fas fa-times"></i></button>
                         <div class="mobile-nav-brand">
-                            <a href='<c:url value="/trang-chu"/> ' class="logo">
+                            <a href='<c:url value="/home"/> ' class="logo">
                                 <img src='<c:url value="/templates/user/images/logo/logo.png" />' alt="Site Logo">
                             </a>
                         </div>
                         <ul class="mainmenu">
                             <li class="">
-                                <a href='<c:url value="/trang-chu"/>'>Trang chủ</a>
+                                <a href='<c:url value="/home"/>'>Trang chủ</a>
                             </li>
                             <li class="">
                                 <a href='<c:url value="/views/user/shop.jsp"/>'>Mua sắm</a>
@@ -357,8 +357,16 @@
                                         <a href="#">Ngôn ngữ</a>
                                     </li>
                                 </ul>
-                                <a href='<c:url value="/login"/>' class="axil-btn btn-bg-primary">Đăng nhập</a>
-                                <div class="reg-footer text-center">Chưa có tài khoản? <a href='<c:url value="/views/user/register.jsp"/>' class="btn-link">Đăng ký.</a></div>
+
+                                <c:if test="${account == null}">
+                                    <a href='<c:url value="/buyer/login"/>' class="axil-btn btn-bg-primary">Đăng nhập</a>
+                                    <div class="reg-footer text-center">Chưa có tài khoản? <a href='<c:url value="/buyer/register"/>' class="btn-link">Đăng ký.</a></div>
+                                </c:if>
+
+                                <c:if test="${account != null}">
+                                    <a href='<c:url value="/buyer/logout"/>' class="axil-btn btn-bg-primary">Đăng xuất</a>
+                                </c:if>
+
                             </div>
                         </li>
                         <li class="axil-mobile-toggle">

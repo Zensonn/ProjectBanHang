@@ -3,6 +3,7 @@ package com.hcmute.team7.azshop.utils;
 public class Constant {
     public static final String DIR = "D:\\";
     public static final String ENCODING = "UTF-8";
+    public static final String COOKIE_REMEMBER = "email";
 
     public static class Path {
         public static final String CATEGORY_LIST = "/views/admin/category/category-list.jsp";
