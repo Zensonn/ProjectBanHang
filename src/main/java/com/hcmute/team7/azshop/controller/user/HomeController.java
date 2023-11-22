@@ -1,7 +1,7 @@
 package com.hcmute.team7.azshop.controller.user;
 
 
-import com.hcmute.team7.azshop.entity.TypeData.Role;
+import com.hcmute.team7.azshop.enums.Role;
 import com.hcmute.team7.azshop.entity.User;
 import com.hcmute.team7.azshop.service.IUserService;
 import com.hcmute.team7.azshop.utils.Constant;

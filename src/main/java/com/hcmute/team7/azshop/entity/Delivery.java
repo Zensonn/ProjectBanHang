@@ -1,10 +1,11 @@
 package com.hcmute.team7.azshop.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Delivery {
+public class Delivery implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long deliveryId;

@@ -1,7 +1,7 @@
 package com.hcmute.team7.azshop.service.Impl;
 
 import com.hcmute.team7.azshop.DAO.UserDAO;
-import com.hcmute.team7.azshop.entity.TypeData.Role;
+import com.hcmute.team7.azshop.enums.Role;
 import com.hcmute.team7.azshop.entity.User;
 import com.hcmute.team7.azshop.service.IUserService;
 

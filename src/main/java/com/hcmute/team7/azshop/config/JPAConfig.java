@@ -5,9 +5,19 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class JPAConfig {
+    private static EntityManagerFactory emf;
+
     public static EntityManager getEntityManager() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
-        return factory.createEntityManager();
+        if (emf == null) {
+            emf = Persistence.createEntityManagerFactory("default");
+        }
+        return emf.createEntityManager();
+    }
+
+    public static void shutdown() {
+        if (emf != null) {
+            emf.close();
+        }
     }
 }
 

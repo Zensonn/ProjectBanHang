@@ -1,4 +1,4 @@
-package com.hcmute.team7.azshop.entity.TypeData;
+package com.hcmute.team7.azshop.enums;
 
 public enum Status {
     PENDING,

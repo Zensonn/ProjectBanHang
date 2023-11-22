@@ -7,6 +7,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Repository<T> {
@@ -18,13 +19,13 @@ public abstract class Repository<T> {
 
     public void create(T entity) {
         EntityManager entityManager = JPAConfig.getEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
+        EntityTransaction transaction = null;
         try {
+            transaction = entityManager.getTransaction();
             transaction.begin();
             entityManager.persist(entity);
             transaction.commit();
         } catch (Exception e) {
-            e.printStackTrace();
             transaction.rollback();
             throw e;
         } finally {
@@ -85,6 +86,12 @@ public abstract class Repository<T> {
 
     public Long countAll() {
         EntityManager entityManager = JPAConfig.getEntityManager();
+        if (entityManager == null) {
+            throw new IllegalStateException("EntityManager is null");
+        }
+
+        Long result = 0L;
+
         try {
             CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
             CriteriaQuery<Long> criteriaQuery = criteriaBuilder.createQuery(Long.class);
@@ -92,11 +99,17 @@ public abstract class Repository<T> {
 
             criteriaQuery.select(criteriaBuilder.count(root));
             Query query = entityManager.createQuery(criteriaQuery);
-            return (Long) query.getSingleResult();
+            result = (Long) query.getSingleResult();
+        } catch (Exception e) {
+            // Log the exception or notify the user here
+            throw e;
         } finally {
             entityManager.close();
         }
+
+        return result;
     }
+
 
     public List<T> findAll(int firstResult, int maxResults) {
         EntityManager entityManager = JPAConfig.getEntityManager();
@@ -119,26 +132,37 @@ public abstract class Repository<T> {
 
     public List<T> findAll(String keyword, int firstResult, int maxResults) {
         EntityManager entityManager = JPAConfig.getEntityManager();
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(entityClass);
-        Root<T> root = criteriaQuery.from(entityClass);
-
-        criteriaQuery.select(root);
-
-        if (keyword != null) {
-            Predicate searchPredicate = criteriaBuilder.like(
-                    criteriaBuilder.lower(root.get("name")),
-                    "%" + keyword.toLowerCase() + "%"
-            );
-            criteriaQuery.where(searchPredicate);
+        if (entityManager == null) {
+            throw new IllegalStateException("EntityManager is null");
         }
 
-        TypedQuery<T> query = entityManager.createQuery(criteriaQuery);
-        query.setFirstResult((firstResult < 1) ? 0 : (firstResult - 1) * maxResults);
-        query.setMaxResults(maxResults);
+        List<T> result = new ArrayList<>();
 
-        List<T> result = query.getResultList();
-        entityManager.close();
+        try {
+            CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+            CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(entityClass);
+            Root<T> root = criteriaQuery.from(entityClass);
+
+            criteriaQuery.select(root);
+
+            if (keyword != null) {
+                Predicate searchPredicate = criteriaBuilder.like(
+                        criteriaBuilder.lower(root.get("name")),
+                        "%" + keyword.toLowerCase() + "%"
+                );
+                criteriaQuery.where(searchPredicate);
+            }
+
+            TypedQuery<T> query = entityManager.createQuery(criteriaQuery);
+            query.setFirstResult((firstResult < 1) ? 0 : (firstResult - 1) * maxResults);
+            query.setMaxResults(maxResults);
+
+            result = query.getResultList();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            entityManager.close();
+        }
         return result;
     }
 

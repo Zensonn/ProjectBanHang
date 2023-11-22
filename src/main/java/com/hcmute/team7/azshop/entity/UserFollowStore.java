@@ -1,10 +1,11 @@
 package com.hcmute.team7.azshop.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class UserFollowStore {
+public class UserFollowStore implements Serializable {
     @EmbeddedId
     private UserFollowStoreKey id = new UserFollowStoreKey();
     @Temporal(TemporalType.TIMESTAMP)

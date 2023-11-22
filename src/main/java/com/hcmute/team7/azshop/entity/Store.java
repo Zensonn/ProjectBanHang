@@ -1,15 +1,15 @@
 package com.hcmute.team7.azshop.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Store {
+public class Store implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
     @Column(columnDefinition = "nvarchar(255)", unique = true, nullable = false)
     private String name;

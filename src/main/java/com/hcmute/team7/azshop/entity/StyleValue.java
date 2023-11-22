@@ -3,13 +3,14 @@ package com.hcmute.team7.azshop.entity;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @Entity
 @Where(clause = "isDeleted = false")
-public class StyleValue {
+public class StyleValue implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,6 +1,6 @@
 package com.hcmute.team7.azshop.entity;
 
-import com.hcmute.team7.azshop.entity.TypeData.Role;
+import com.hcmute.team7.azshop.enums.Role;
 
 import javax.persistence.*;
 import java.util.Date;

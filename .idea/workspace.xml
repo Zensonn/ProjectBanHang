@@ -10,41 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/OrdersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/OrdersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IOrdersService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/OrdersServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/vendor/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/vendor/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/vendor/left.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/decorators/vendor/vendor.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/css/OneNote Table Of Contents.onetoc2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/img/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/js/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/templates/vendor/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/vendor/product/product-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/vendor/product/product-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Style.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/StyleValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/StyleValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/user/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/user/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/decorators/user/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/decorators/user/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8e6355668275395a5e7e98e3f905312409fe11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a6198ed1c66d694e3db124db02fcffb25f8d98a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d597502761a7463d9872746e3c883863cac12f82" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d597502761a7463d9872746e3c883863cac12f82" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc4ef89f5dffcaf9d4051d7432b6ff6a78e3f267" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa686e2362c9137b1304265f12efcdc545c39d6c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/a/6a8e6355668275395a5e7e98e3f905312409fe11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8a6198ed1c66d694e3db124db02fcffb25f8d98a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/c/dc4ef89f5dffcaf9d4051d7432b6ff6a78e3f267" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/a/fa686e2362c9137b1304265f12efcdc545c39d6c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/config/JPAConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/config/JPAConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/TypeData/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/TypeData/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +56,8 @@
   </component>
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/user/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/decorators/user/user.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/admin/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/decorators/admin-home.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/admin/left.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/decorators/admin-home.jsp" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -140,7 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="AZSHOP:war exploded">
@@ -245,6 +236,7 @@
       <workItem from="1699873363274" duration="3195000" />
       <workItem from="1700186879940" duration="10341000" />
       <workItem from="1700225333914" duration="2111000" />
+      <workItem from="1700634909588" duration="4035000" />
     </task>
     <servers />
   </component>
@@ -259,12 +251,12 @@
           <line>131</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/ProductController.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
