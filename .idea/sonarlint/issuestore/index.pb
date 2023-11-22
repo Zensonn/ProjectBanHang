@@ -72,8 +72,6 @@ f
 6src/main/java/com/hcmute/team7/azshop/DAO/UserDAO.java,a\1\a13235214e56b5a87e8400409fe362a35526d446
 f
 6src/main/java/com/hcmute/team7/azshop/entity/User.java,7\3\734280cf88e40c9ba229212af2c68be85daebfed
-f
-6src/main/java/com/hcmute/team7/azshop/utils/Email.java,1\1\11a46baf773ccf2316f387357403233ba366dcb1
 o
 ?src/main/java/com/hcmute/team7/azshop/service/IUserService.java,5\1\513632c57835d63a855a0d10233b05986f69e14e
 w

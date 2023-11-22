@@ -9,32 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8e6355668275395a5e7e98e3f905312409fe11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a6198ed1c66d694e3db124db02fcffb25f8d98a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d597502761a7463d9872746e3c883863cac12f82" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d597502761a7463d9872746e3c883863cac12f82" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc4ef89f5dffcaf9d4051d7432b6ff6a78e3f267" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa686e2362c9137b1304265f12efcdc545c39d6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/a/6a8e6355668275395a5e7e98e3f905312409fe11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8a6198ed1c66d694e3db124db02fcffb25f8d98a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/c/dc4ef89f5dffcaf9d4051d7432b6ff6a78e3f267" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/a/fa686e2362c9137b1304265f12efcdc545c39d6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/config/JPAConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/config/JPAConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/TypeData/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/TypeData/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,7 +211,7 @@
       <workItem from="1699873363274" duration="3195000" />
       <workItem from="1700186879940" duration="10341000" />
       <workItem from="1700225333914" duration="2111000" />
-      <workItem from="1700634909588" duration="4035000" />
+      <workItem from="1700634909588" duration="4359000" />
     </task>
     <servers />
   </component>
