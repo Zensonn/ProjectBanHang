@@ -6,51 +6,13 @@
         <form action="#">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="axil-checkout-notice">
-                        <div class="axil-toggle-box">
-                            <div class="toggle-bar"><i class="fas fa-user"></i> Returning customer? <a href="javascript:void(0)" class="toggle-btn">Click here to login <i class="fas fa-angle-down"></i></a>
-                            </div>
-                            <div class="axil-checkout-login toggle-open">
-                                <p>If you didn't Log ged in, Please Log in first.</p>
-                                <div class="signin-box">
-                                    <div class="form-group">
-                                        <label for="email-login">Email</label>
-                                        <input id="email-login" type="email" class="form-control" name="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password-login">Password</label>
-                                        <input id="password-login" type="password" class="form-control" name="password">
-                                    </div>
-                                    <div class="form-group mb--0">
-                                        <button type="submit" class="axil-btn btn-bg-primary submit-btn">Sign In</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="axil-toggle-box">
-                            <div class="toggle-bar"><i class="fas fa-pencil"></i> Have a coupon? <a href="javascript:void(0)" class="toggle-btn">Click here to enter your code <i class="fas fa-angle-down"></i></a>
-                            </div>
-
-                            <div class="axil-checkout-coupon toggle-open">
-                                <p>If you have a coupon code, please apply it below.</p>
-                                <div class="input-group">
-                                    <label>
-                                        <input placeholder="Enter coupon code" type="text">
-                                    </label>
-                                    <div class="apply-btn">
-                                        <button type="submit" class="axil-btn btn-bg-primary">Apply</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="axil-checkout-billing">
-                        <h4 class="title mb--40">Billing details</h4>
+                        <h4 class="title mb--40">Thông tin</h4>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="first-name">First Name <span>*</span></label>
-                                    <input type="text" id="first-name" placeholder="Adam">
+                                    <label for="fullName">Họ và tên <span>*</span></label>
+                                    <input type="text" id="fullName">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -61,59 +23,32 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="company-name">Company Name</label>
-                            <input type="text" id="company-name">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email">
                         </div>
                         <div class="form-group">
-                            <label for="region">Country/ Region <span>*</span></label>
-                            <select  id="region">
-                                <option value="3">Australia</option>
-                                <option value="4">England</option>
-                                <option value="6">New Zealand</option>
-                                <option value="5">Switzerland</option>
-                                <option value="1">United Kindom (UK)</option>
-                                <option value="2">United States (USA)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="street-address">Street Address <span>*</span></label>
-                            <input id="street-address" type="text" class="mb--15" placeholder="House number and street name">
-                        </div>
-                        <div class="form-group">
-                            <label for="city">Town/ City <span>*</span></label>
-                            <input id="city" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="country1">Country</label>
-                            <input id="country1" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone <span>*</span></label>
+                            <label for="phone">Số điện thoại <span>*</span></label>
                             <input id="phone" type="tel">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address <span>*</span></label>
-                            <input type="email" id="email">
-                        </div>
-                        <div class="form-group input-group">
-                            <input type="checkbox" id="checkbox" name="account-create">
-                            <label for="checkbox">Create an account</label>
+                            <label for="street-address">Địa chỉ <span>*</span></label>
+                            <input id="street-address" type="text" class="mb--15">
                         </div>
                         <div class="form-group">
-                            <label for="notes">Other Notes (optional)</label>
-                            <textarea id="notes" rows="2" placeholder="Notes about your orders, e.g. special notes for delivery."></textarea>
+                            <label for="notes">Ghi chú (optional)</label>
+                            <textarea id="notes" rows="2"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="axil-orders-summery orders-checkout-summery">
-                        <h5 class="title mb--20">Your Order</h5>
+                        <h5 class="title mb--20">Đơn hàng của bạn</h5>
                         <div class="summery-table-wrap">
                             <table class="table summery-table">
                                 <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Subtotal</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng tiền</th>
                                 </tr>
                                 </thead>
                                 <tbody>

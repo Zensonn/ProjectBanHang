@@ -20,12 +20,16 @@
     <input class="form-control" type="text" value="${product.name}" name="name">
 </div>
 <div class="col-6">
-    <label class="form-label">Icon</label>
+    <label class="form-label">Hình ảnh</label>
     <input class="form-control" type="file" value="${product.image}" name="image">
 </div>
 <div class="col-6">
-    <label class="form-label">Giá Tiền</label>
+    <label class="form-label">Giá bán</label>
     <input class="form-control" type="text" value="${product.price}" name="price">
+</div>
+<div class="col-6">
+    <label class="form-label">Giảm giá (%)</label>
+    <input class="form-control" type="text" value="${product.percentDiscount}" name="percentDiscount">
 </div>
 <div class="col-6">
     <label class="form-label">Mô tả</label>
@@ -34,10 +38,6 @@
 <div class="col-6">
     <label class="form-label">Số lượng</label>
     <input class="form-control" type="text" value="${product.quantity}" name="quantity">
-</div>
-<div class="col-6">
-    <label class="form-label">Đã bán</label>
-    <input class="form-control" type="text" value="${product.sold}" name="sold">
 </div>
 <div class="col-6">
     <label class="form-label" for="categorySelect">Tên danh mục: </label>

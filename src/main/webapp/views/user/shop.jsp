@@ -7,9 +7,9 @@
             <div class="col-lg-6 col-md-8">
                 <div class="inner">
                     <ul class="axil-breadcrumb">
-                        <li class="axil-breadcrumb-item"><a href='<c:url value="/trang-chu"/>'>Home</a></li>
+                        <li class="axil-breadcrumb-item"><a href='<c:url value="/home"/>'>Trang chủ</a></li>
                         <li class="separator"></li>
-                        <li class="axil-breadcrumb-item active" aria-current="page">Shop</li>
+                        <li class="axil-breadcrumb-item active" aria-current="page">Mua sắm</li>
                     </ul>
                     <h1 class="title">Explore All Products</h1>
                 </div>
@@ -140,258 +140,46 @@
                 </div>
                 <!-- End .row -->
                 <div class="row row--15">
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-01.png"/>' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">10% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>3D™ wireless headset</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$30</span>
-                                        <span class="price old-price">$30</span>
+                    <c:forEach items="${products}" var="product">
+                            <div class="col-xl-4 col-sm-6">
+                                <div class="axil-product product-style-one mb--30">
+                                    <div class="thumbnail">
+                                        <a href='<c:url value="/product-detail"/>'>
+                                            <c:url value="/image?fileName=product/${product.image!=null?product.image:'uploads/abc.jpg'}" var="imgProduct"/>
+                                            <img src="${imgProduct}" alt="Product Images">
+                                        </a>
+                                        <div class="label-block label-right">
+                                           <c:if test="${product.percentDiscount > 0}">
+                                               <div class="product-badget">${product.percentDiscount}%</div>
+                                           </c:if>
+                                        </div>
+                                        <div class="product-hover-action">
+                                            <ul class="cart-action">
+                                                <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
+                                                <li class="select-option"><a href='<c:url value="/add-to-cart?id=${product.id}"/>'>Thêm vào giỏ</a></li>
+                                                <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="inner">
+                                            <input type="hidden" value="${product.id}" name="id"/>
+                                            <h5 class="title"><a href='<c:url value="/product-detail?id=${product.id}"/>'><c:out value="${product.name}"/></a></h5>
+                                            <div class="product-price-variant">
+                                                <c:if test="${product.percentDiscount > 0}">
+                                                    <span class="price old-price"><fmt:formatNumber pattern="###,###đ" value="${product.price}"/></span>
+                                                    <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${product.promotionalPrice}"/></span>
+                                                </c:if>
+
+                                                <c:if test="${product.percentDiscount <= 0}">
+                                                <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${product.price}"/></span>
+                                                </c:if>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-02.png"/>' alt="Product Images">
-                                </a>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Media remote</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$40</span>
-                                        <span class="price old-price">$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-03.png"/>' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">25% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>HD camera</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$45</span>
-                                        <span class="price old-price">$60</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-04.png"/>' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">5% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Guys Bomber Jacket</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$50</span>
-                                        <span class="price old-price">$60</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-05.png"/>' alt="Product Images">
-                                </a>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Level 20 RGB Cherry</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$38</span>
-                                        <span class="price old-price">$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-06.png"/>' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">5% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Level 20 RGB Cherry</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$25</span>
-                                        <span class="price old-price">$40</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-07.png" />' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">15% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Logitech Streamer</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$15</span>
-                                        <span class="price old-price">$20</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-08.png"/>' alt="Product Images">
-                                </a>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'>Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Bass Meets Clarity</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$60</span>
-                                        <span class="price old-price">$80</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
-                    <div class="col-xl-4 col-sm-6">
-                        <div class="axil-product product-style-one mb--30">
-                            <div class="thumbnail">
-                                <a href='<c:url value="product-details.jsp"/>'>
-                                    <img src='<c:url value="/templates/user/images/product/electric/product-02.png" />' alt="Product Images">
-                                </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">30% OFF</div>
-                                </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>'><i class="far fa-heart" style="line-height: inherit"></i></a></li>
-                                        <li class="select-option"><a href='<c:url value="cart.jsp"/>'> Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye" style="line-height: inherit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href='<c:url value="product-details.jsp"/>'>Media remote</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$40</span>
-                                        <span class="price old-price">$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product  -->
+                    </c:forEach>
                 </div>
                 <div class="text-center pt--20">
                     <a href="#" class="axil-btn btn-bg-lighter btn-load-more">Load more</a>
@@ -579,13 +367,17 @@
         </div>
         <div class="cart-body">
             <ul class="cart-item-list">
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-01.png"/>' alt="Commodore Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
+                <c:forEach items="${cartItems}" var="cartItem">
+                    <li class="cart-item">
+                        <div class="item-img">
+                            <a href='<c:url value="product-details.jsp"/>'>
+                                <c:url value="/image?fileName=product/${cartItem.product.image!=null?cartItem.product.image:'uploads/abc.jpg'}" var="imgProduct"/>
+                                <img src="${imgProduct}" alt="Product Images">
+                            </a>
+                            <button class="close-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="item-content">
+                            <div class="product-rating">
                                 <span class="icon">
 								<i class="fas fa-star"></i>
 								<i class="fas fa-star"></i>
@@ -593,67 +385,14 @@
 								<i class="fas fa-star"></i>
 								<i class="fas fa-star"></i>
 							</span>
-                            <span class="rating-number">(64)</span>
+                                <span class="rating-number">(10)</span>
+                            </div>
+                            <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>${cartItem.product.name}</a></h3>
+                            <div class="item-price"><span class="currency-symbol">$</span>${cartItem.product.promotionalPrice}</div>
                         </div>
-                        <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>Wireless PS Handler</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>155.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="15">
-                            </label>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-02.png"/>' alt="Commode Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
-                                <span class="icon">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</span>
-                            <span class="rating-number">(4)</span>
-                        </div>
-                        <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>Gradient Light Keyboard</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>255.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="5">
-                            </label>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-03.png"/>' alt="Commodore Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
-                                <span class="icon">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</span>
-                            <span class="rating-number">(6)</span>
-                        </div>
-                        <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>HD CC Camera</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>200.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="100">
-                            </label>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </c:forEach>
+
             </ul>
         </div>
         <div class="cart-footer">
@@ -662,7 +401,7 @@
                 <span class="subtotal-amount">$610.00</span>
             </h3>
             <div class="group-btn">
-                <a href='<c:url value="cart.jsp"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
+                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
                 <a href='<c:url value="checkout.jsp"/>' class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
             </div>
         </div>

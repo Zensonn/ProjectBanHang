@@ -15,7 +15,7 @@ public class OrderItem implements Serializable {
     @CollectionTable(joinColumns = @JoinColumn(name = "order_item_id"))
     private List<Long> styleValueIds;
     @Column(nullable = false)
-    private int count;
+    private int quantity;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
@@ -41,10 +41,10 @@ public class OrderItem implements Serializable {
     public OrderItem() {
     }
 
-    public OrderItem(Long id, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Orders orders, Product product, StyleValue styleValue) {
+    public OrderItem(Long id, List<Long> styleValueIds, int quantity, Date createdAt, Date updatedAt, Orders orders, Product product, StyleValue styleValue) {
         this.id = id;
         this.styleValueIds = styleValueIds;
-        this.count = count;
+        this.quantity = quantity;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.orders = orders;
@@ -69,11 +69,11 @@ public class OrderItem implements Serializable {
     }
 
     public int getCount() {
-        return count;
+        return quantity;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCount(int quantity) {
+        this.quantity = quantity;
     }
 
     public Date getCreatedAt() {

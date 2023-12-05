@@ -309,7 +309,7 @@
                                 <a href='<c:url value="/home"/>'>Trang chủ</a>
                             </li>
                             <li class="">
-                                <a href='<c:url value="/views/user/shop.jsp"/>'>Mua sắm</a>
+                                <a href='<c:url value="/shop"/>'>Mua sắm</a>
                             </li>
                             <li><a href='<c:url value="/views/user/about-us.jsp"/>'>Về chúng tôi</a></li>
                             <li class="">
@@ -333,8 +333,8 @@
                             </a>
                         </li>
                         <li class="shopping-cart">
-                            <a href="#" class="cart-dropdown-btn">
-                                <span class="cart-count">3</span>
+                            <a href='<c:url value="/view-cart"/>' class="cart-dropdown-btn">
+                                <span class="cart-count">${sessionScope.totalItemInCart}</span>
                                 <i class="flaticon-shopping-cart"></i>
                             </a>
                         </li>
@@ -345,7 +345,7 @@
                             <div class="my-account-dropdown">
                                 <ul>
                                     <li>
-                                        <a href='<c:url value="/views/user/my-account.jsp"/>'>Tài khoản của tôi</a>
+                                        <a href='<c:url value="/my-account"/>'>Tài khoản của tôi</a>
                                     </li>
                                     <li>
                                         <a href="#">Initiate return</a>
@@ -359,12 +359,12 @@
                                 </ul>
 
                                 <c:if test="${account == null}">
-                                    <a href='<c:url value="/buyer/login"/>' class="axil-btn btn-bg-primary">Đăng nhập</a>
+                                    <a href='<c:url value="/user/login"/>' class="axil-btn btn-bg-primary">Đăng nhập</a>
                                     <div class="reg-footer text-center">Chưa có tài khoản? <a href='<c:url value="/buyer/register"/>' class="btn-link">Đăng ký.</a></div>
                                 </c:if>
 
                                 <c:if test="${account != null}">
-                                    <a href='<c:url value="/buyer/logout"/>' class="axil-btn btn-bg-primary">Đăng xuất</a>
+                                    <a href='<c:url value="/user/logout"/>' class="axil-btn btn-bg-primary">Đăng xuất</a>
                                 </c:if>
 
                             </div>

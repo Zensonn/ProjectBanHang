@@ -1,7 +1,7 @@
 package com.hcmute.team7.azshop.controller.vendor;
 
-import com.hcmute.team7.azshop.entity.Category;
-import com.hcmute.team7.azshop.entity.Product;
+import com.hcmute.team7.azshop.entity.*;
+import com.hcmute.team7.azshop.enums.Role;
 import com.hcmute.team7.azshop.service.ICategoryService;
 import com.hcmute.team7.azshop.service.IProductService;
 import com.hcmute.team7.azshop.utils.Constant;
@@ -47,7 +47,7 @@ public class ProductController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURL().toString();
 
         if (url.contains("create")) {
@@ -61,8 +61,12 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    protected void findAll(HttpServletRequest request, HttpServletResponse response) {
-        try {
+    protected void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+
+        if (user != null && user.getRole() == Role.VENDOR) {
             int page = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
             int pageSize = request.getParameter("pageSize") != null ? Integer.parseInt(request.getParameter("pageSize")) : 5;
             String keyword = request.getParameter("keyword");
@@ -87,9 +91,8 @@ public class ProductController extends HttpServlet {
             request.setAttribute("totalPage", totalPage);
 
             request.getRequestDispatcher(Constant.Path.PRODUCT_LIST).forward(request, response);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            response.sendRedirect("/user/login");
         }
     }
 
@@ -121,8 +124,10 @@ public class ProductController extends HttpServlet {
             long productId = Long.parseLong(request.getParameter("id"));
 
             Product existingProduct = productService.findById(productId);
+            List<Category> categories = categoryService.findAll();
 
             request.setAttribute("product", existingProduct);
+            request.setAttribute("categories", categories);
             request.getRequestDispatcher(Constant.Path.PRODUCT_FORM).forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,6 +141,11 @@ public class ProductController extends HttpServlet {
 
             Product updateProduct = new Product();
             BeanUtils.populate(updateProduct, request.getParameterMap());
+
+            // Cập nhật category
+            Long categoryId = Long.parseLong(request.getParameter("category.id"));
+            Category category = categoryService.findById(categoryId);
+            updateProduct.setCategory(category);
 
             Product oldProduct = productService.findById(updateProduct.getId());
 

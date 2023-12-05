@@ -37,8 +37,8 @@ public class User {
     private Store store;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Transaction> transactions;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private Set<Cart> carts;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Cart cart;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Orders> orders;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -72,7 +72,7 @@ public class User {
         this.role = role;
     }
 
-    public User(Long id, String userName, String fullName, String email, String phone, String code, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Set<Cart> carts, Set<Orders> orders, Set<Review> reviews) {
+    public User(Long id, String userName, String fullName, String email, String phone, String code, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Cart cart, Set<Orders> orders, Set<Review> reviews) {
         this.id = id;
         this.userName = userName;
         this.fullName = fullName;
@@ -88,7 +88,7 @@ public class User {
         this.updatedAt = updatedAt;
         this.store = store;
         this.transactions = transactions;
-        this.carts = carts;
+        this.cart = cart;
         this.orders = orders;
         this.reviews = reviews;
     }
@@ -213,12 +213,12 @@ public class User {
         this.transactions = transactions;
     }
 
-    public Set<Cart> getCarts() {
-        return carts;
+    public Cart getCart() {
+        return cart;
     }
 
-    public void setCarts(Set<Cart> carts) {
-        this.carts = carts;
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     public Set<Orders> getOrders() {

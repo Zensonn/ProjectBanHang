@@ -81,8 +81,8 @@
                         <th scope="col">ID</th>
                         <th scope="col">Hình ảnh</th>
                         <th scope="col">Tên sản phẩm</th>
-                        <th scope="col">Giá tiền</th>
-                        <th scope="col">Mô tả</th>
+                        <th scope="col">Giá gốc</th>
+                        <th scope="col">Giá giảm</th>
                         <th scope="col">Số lượng</th>
                         <th scope="col">Đã bán</th>
                         <th scope="col">Danh mục</th>
@@ -99,7 +99,7 @@
                             </td>
                             <td>${product.name}</td>
                             <td>${product.price}</td>
-                            <td>${product.description}</td>
+                            <td>${product.promotionalPrice}</td>
                             <td>${product.quantity}</td>
                             <td>${product.sold}</td>
                             <td>${product.category.name}</td>

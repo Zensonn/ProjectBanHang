@@ -22,8 +22,8 @@ public class Email {
         boolean test = false;
 
         String toEmail = user.getEmail();
-        String fromEmail = "xxx";
-        String password = "xxx";
+        String fromEmail = "abc";
+        String password = "abc";
 
         try {
             Properties properties = configEmail(new Properties());

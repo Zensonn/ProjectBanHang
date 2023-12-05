@@ -15,11 +15,13 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
 
     @Override
     public void create(Product product) {
+        product.setPromotionalPrice(product.getPrice() - ((product.getPrice() * product.getPercentDiscount()) / 100));
         productDAO.create(product);
     }
 
     @Override
     public void update(Product product) {
+        product.setPromotionalPrice(product.getPrice() - ((product.getPrice() * product.getPercentDiscount()) / 100));
         productDAO.update(product);
     }
 

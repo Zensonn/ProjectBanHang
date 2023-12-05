@@ -13,7 +13,7 @@
                                     <span class="subtitle"><i class="fal fa-badge-percent"></i> Mega Deal</span>
                                     <h1 class="title">Up to 60% off Sale</h1>
                                     <div class="shop-btn">
-                                        <a href='<c:url value="/views/user/shop.jsp"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
+                                        <a href='<c:url value="/shop"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="main-slider-thumb">
@@ -25,7 +25,7 @@
                                     <span class="subtitle"><i class="fal fa-fire"></i> Hot Deal</span>
                                     <h1 class="title">Up to 60% off Voucher</h1>
                                     <div class="shop-btn">
-                                        <a href='<c:url value="/views/user/shop.jsp"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
+                                        <a href='<c:url value="/shop"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="main-slider-thumb">
@@ -37,7 +37,7 @@
                                     <span class="subtitle"><i class="far fa-mobile"></i> Smartphone</span>
                                     <h1 class="title">Up to 60% off Voucher</h1>
                                     <div class="shop-btn">
-                                        <a href='<c:url value="/views/user/shop.jsp"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
+                                        <a href='<c:url value="/shop"/>' class="axil-btn">Shop Now <i class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="main-slider-thumb">
@@ -2092,13 +2092,17 @@
         </div>
         <div class="cart-body">
             <ul class="cart-item-list">
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="/views/user/product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-01.png"/>' alt="Commodore Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
+                <c:forEach items="${cartItems}" var="cartItem">
+                    <li class="cart-item">
+                        <div class="item-img">
+                            <a href='<c:url value="product-details.jsp"/>'>
+                                <c:url value="/image?fileName=product/${cartItem.product.image!=null?cartItem.product.image:'uploads/abc.jpg'}" var="imgProduct"/>
+                                <img src="${imgProduct}" alt="Product Images">
+                            </a>
+                            <button class="close-btn"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="item-content">
+                            <div class="product-rating">
                                 <span class="icon">
 								<i class="fas fa-star"></i>
 								<i class="fas fa-star"></i>
@@ -2106,67 +2110,19 @@
 								<i class="fas fa-star"></i>
 								<i class="fas fa-star"></i>
 							</span>
-                            <span class="rating-number">(64)</span>
+                                <span class="rating-number">(10)</span>
+                            </div>
+                            <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>${cartItem.product.name}</a></h3>
+                            <div class="item-price"><span class="currency-symbol">$</span>${cartItem.product.promotionalPrice}</div>
+                            <div class="pro-qty item-quantity">
+                                <label>
+                                    <input type="number" class="quantity-input" value="15">
+                                </label>
+                            </div>
                         </div>
-                        <h3 class="item-title"><a href='<c:url value="/views/user/product-details.jsp"/>'>Wireless PS Handler</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>155.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="15">
-                            </label>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="/views/user/product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-02.png"/>' alt="Commode Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
-                                <span class="icon">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</span>
-                            <span class="rating-number">(4)</span>
-                        </div>
-                        <h3 class="item-title"><a href='<c:url value="/views/user/product-details.jsp"/>'>Gradient Light Keyboard</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>255.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="5">
-                            </label>
-                        </div>
-                    </div>
-                </li>
-                <li class="cart-item">
-                    <div class="item-img">
-                        <a href='<c:url value="/views/user/product-details.jsp"/>'><img src='<c:url value="/templates/user/images/product/electric/product-03.png"/>' alt="Commodore Blown Lamp"></a>
-                        <button class="close-btn"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="item-content">
-                        <div class="product-rating">
-                                <span class="icon">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</span>
-                            <span class="rating-number">(6)</span>
-                        </div>
-                        <h3 class="item-title"><a href='<c:url value="/views/user/product-details.jsp"/>'>HD CC Camera</a></h3>
-                        <div class="item-price"><span class="currency-symbol">$</span>200.00</div>
-                        <div class="pro-qty item-quantity">
-                            <label>
-                                <input type="number" class="quantity-input" value="100">
-                            </label>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </c:forEach>
+
             </ul>
         </div>
         <div class="cart-footer">
@@ -2175,10 +2131,10 @@
                 <span class="subtotal-amount">$610.00</span>
             </h3>
             <div class="group-btn">
-                <a href='<c:url value="/views/user/cart.jsp"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
-                <a href='<c:url value="/views/user/checkout.jsp"/>' class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
+                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
+                <a href='<c:url value="checkout.jsp"/>' class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
             </div>
         </div>
     </div>
 </div>
-<!-- Cart View Modal End -->
+<!-- Cart View Modal Start -->

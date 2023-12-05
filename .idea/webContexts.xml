@@ -6,9 +6,12 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/common/admin/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/common/admin/left.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/common/info.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/common/user/header-home.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/common/user/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/decorators/admin-home.jsp" value="file://$PROJECT_DIR$/src/main/webapp/decorators" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/category/category-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/category" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/subcategory/subcategory-form.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/subcategory" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/cart.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
       </map>
     </option>
   </component>

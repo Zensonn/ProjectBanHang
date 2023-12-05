@@ -1,7 +1,0 @@
-
-‰
-java:S1192$"lDefine a constant instead of duplicating this literal "SELECT u FROM User u WHERE u.email = :email" 3 times.(®³çš8ÕÅ½—¼1
-c
-java:S1192&"FDefine a constant instead of duplicating this literal "email" 3 times.(šý×Â8ÕÅ½—¼1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õþ†ûùÿÿÿÿ8õ¤ú“¼1
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡˜õ·ÿÿÿÿÿ8”¥ú“¼1

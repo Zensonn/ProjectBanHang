@@ -10,21 +10,21 @@ import java.util.Set;
 public class CartItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cartItemId;
+    private Long id;
     @ElementCollection
     @CollectionTable(joinColumns = @JoinColumn(name = "cart_item_id"))
     private List<Long> styleValueIds;
-    @Column(nullable = false)
-    private int count;
+    private int quantity;
+    private int totalPrice;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id")
     private Cart cart;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
     @ManyToOne
@@ -42,10 +42,16 @@ public class CartItem implements Serializable {
     public CartItem() {
     }
 
-    public CartItem(Long cartItemId, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Cart cart, Product product, StyleValue styleValue) {
-        this.cartItemId = cartItemId;
+    public CartItem(Product product, int quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
+
+    public CartItem(Long id, List<Long> styleValueIds, int quantity, int totalPrice, Date createdAt, Date updatedAt, Cart cart, Product product, StyleValue styleValue) {
+        this.id = id;
         this.styleValueIds = styleValueIds;
-        this.count = count;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.cart = cart;
@@ -53,12 +59,12 @@ public class CartItem implements Serializable {
         this.styleValue = styleValue;
     }
 
-    public Long getCartItemId() {
-        return cartItemId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCartItemId(Long cartItemId) {
-        this.cartItemId = cartItemId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public List<Long> getStyleValueIds() {
@@ -69,12 +75,12 @@ public class CartItem implements Serializable {
         this.styleValueIds = styleValueIds;
     }
 
-    public int getCount() {
-        return count;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Date getCreatedAt() {
@@ -115,5 +121,13 @@ public class CartItem implements Serializable {
 
     public void setStyleValue(StyleValue styleValue) {
         this.styleValue = styleValue;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
