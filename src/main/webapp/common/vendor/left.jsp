@@ -62,5 +62,8 @@
         <li class="">
             <a href="#"><i class="material-icons">library_books</i><span>Thông Tin</span></a>
         </li>
+        <li class="">
+            <a href='<c:url value="/user/logout"/>'><i class="material-icons">logout</i><span>Dăng Xuất</span></a>
+        </li>
     </ul>
 </nav>

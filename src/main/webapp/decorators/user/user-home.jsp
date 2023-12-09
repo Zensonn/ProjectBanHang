@@ -51,6 +51,7 @@
     <script src='<c:url value="/templates/user/js/vendor/counterup.js"/>'></script>
     <script src='<c:url value="/templates/user/js/vendor/waypoints.min.js"/>'></script>
 
+
     <!-- Main JS -->
     <script src='<c:url value="/templates/user/js/main.js"/>'></script>
 </body>

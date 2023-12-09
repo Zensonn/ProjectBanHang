@@ -12,4 +12,7 @@ public interface IProductService {
     List<Product> findAll(String keyword, int page, int pageSize);
     Product findById(Long productId);
     Long count();
+
+
+    List<Product> findByCategoryId(Long categoryId);
 }

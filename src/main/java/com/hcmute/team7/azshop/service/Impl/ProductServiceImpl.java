@@ -13,6 +13,8 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
     @Inject
     private ProductDAO productDAO;  // Update the DAO
 
+
+
     @Override
     public void create(Product product) {
         product.setPromotionalPrice(product.getPrice() - ((product.getPrice() * product.getPercentDiscount()) / 100));
@@ -40,6 +42,7 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
         return productDAO.findAll(keyword, page, pageSize);
     }
 
+
     @Override
     public Product findById(Long productId) {
         return productDAO.findById(productId);
@@ -49,4 +52,10 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
     public Long count() {
         return productDAO.countAll();
     }
+
+    @Override
+    public List<Product> findByCategoryId(Long categoryId) {
+        return productDAO.findByCategoryId(categoryId);
+    }
+
 }

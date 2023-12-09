@@ -1,69 +1,57 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
+
 <!-- Start Shop Area  -->
 <div class="axil-single-product-area axil-section-gap pb--0 bg-color-white">
     <div class="single-product-thumb mb--40">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mb--40">
+                    <!-- Chỉ đưa vào trang JSP một sản phẩm duy nhất -->
+
+
                     <div class="row">
                         <div class="col-lg-10 orders-lg-2">
                             <div class="single-product-thumbnail-wrap zoom-gallery">
                                 <div class="single-product-thumbnail product-large-thumbnail-3 axil-product">
-                                    <div class="thumbnail">
-                                        <a href='<c:url value="/templates/user/images/product/product-big-01.png"/>' class="popup-zoom">
-                                            <img src='<c:url value="/templates/user/images/product/product-big-01.png"/>' alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="thumbnail">
-                                        <a href='<c:url value="/templates/user/images/product/product-big-02.png"/>' class="popup-zoom">
-                                            <img src='<c:url value="/templates/user/images/product/product-big-02.png"/>' alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="thumbnail">
-                                        <a href='<c:url value="/templates/user/images/product/product-big-03.png"/>' class="popup-zoom">
-                                            <img src='<c:url value="/templates/user/images/product/product-big-03.png"/>' alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="thumbnail">
-                                        <a href='<c:url value="/templates/user/images/product/product-big-02.png"/>' class="popup-zoom">
-                                            <img src='<c:url value="/templates/user/images/product/product-big-02.png"/>' alt="Product Images">
-                                        </a>
-                                    </div>
+                                    <!-- Iterate over product images -->
+
+                                        <div class="thumbnail">
+                                            <a href='<c:url value="/image?fileName=product/${product.image!=null?product.image:'uploads/abc.jpg'}" var="imgProduct"/>' class="popup-zoom">
+                                                <img src="${imgProduct}" alt="Product Images">
+                                            </a>
+                                        </div>
+
                                 </div>
                                 <div class="label-block">
-                                    <div class="product-badget">20% OFF</div>
+                                    <div class="product-badget">${product.percentDiscount}% OFF</div>
                                 </div>
                                 <div class="product-quick-view position-view">
-                                    <a href='<c:url value="/templates/user/images/product/product-big-01.png"/>' class="popup-zoom">
+                                    <a href='<c:url value="/image?fileName=product/${product.image!=null?product.image:'uploads/abc.jpg'}" var="imgProduct"/>' class="popup-zoom">
                                         <i class="far fa-search-plus"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 orders-lg-1">
-                            <div class="product-small-thumb-3 small-thumb-wrapper">
-                                <div class="small-thumb-img">
-                                    <img src='<c:url value="/templates/user/images/product/product-thumb/thumb-08.png"/>' alt="thumb image">
-                                </div>
-                                <div class="small-thumb-img">
-                                    <img src='<c:url value="/templates/user/images/product/product-thumb/thumb-07.png"/>' alt="thumb image">
-                                </div>
-                                <div class="small-thumb-img">
-                                    <img src='<c:url value="/templates/user/images/product/product-thumb/thumb-09.png"/>' alt="thumb image">
-                                </div>
-                                <div class="small-thumb-img">
-                                    <img src='<c:url value="/templates/user/images/product/product-thumb/thumb-07.png"/>' alt="thumb image">
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Remaining HTML code for the left section... -->
                     </div>
                 </div>
                 <div class="col-lg-5 mb--40">
                     <div class="single-product-content">
                         <div class="inner">
-                            <h2 class="product-title">3D™ wireless headset</h2>
-                            <span class="price-amount">$155.00 - $255.00</span>
+                            <!-- Use JSTL to display product details -->
+                            <h2 class="product-title">${product.name}</h2>
+
+                            <c:if test="${product.percentDiscount > 0}">
+                                <span class="price-amount text-decoration-line-through price old-price" style="opacity: 0.4;">
+                                    <fmt:formatNumber pattern="###,###đ" value="${product.price}"/>
+                                </span>
+                                <span class=" price-amount price current-price"><fmt:formatNumber pattern="###,###đ" value="${product.promotionalPrice}"/></span>
+                            </c:if>
+
+                            <c:if test="${product.percentDiscount <= 0}">
+                                <span class=" price-amount price current-price"><fmt:formatNumber pattern="###,###đ" value="${product.price}"/></span>
+                            </c:if>
                             <div class="product-rating">
                                 <div class="star-rating">
                                     <i class="fas fa-star"></i>
@@ -73,16 +61,15 @@
                                     <i class="far fa-star"></i>
                                 </div>
                                 <div class="review-link">
-                                    <a href="#">(<span>2</span> customer reviews)</a>
+                                    <a href="#">(<span>2</span> lượt đánh giá )</a>
                                 </div>
                             </div>
                             <ul class="product-meta">
-                                <li><i class="fal fa-check"></i>In stock</li>
-                                <li><i class="fal fa-check"></i>Free delivery available</li>
-                                <li><i class="fal fa-check"></i>Sales 30% Off Use Code: MOTIVE30</li>
+                                <li><i class="fal fa-check"></i>Còn hàng</li>
+                                <li><i class="fal fa-check"></i>Giao hàng miễn phí khi mua 2 sản phẩm</li>
+                                <li><i class="fal fa-check"></i>Giảm giá ${product.percentDiscount}% Mã sử dụng: MOTIVE30</li>
                             </ul>
-                            <p class="description">In ornare lorem ut est dapibus, ut tincidunt nisi pretium. Integer ante est, elementum eget magna. Pellentesque sagittis dictum libero, eu dignissim tellus.</p>
-
+                            <p class="description">${product.description}</p>
                             <div class="product-variations-wrapper">
 
                                 <!-- Start Product Variation  -->
@@ -99,22 +86,22 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- End Product Variation  -->
 
-                                <!-- Start Product Variation  -->
-                                <div class="product-variation product-size-variation">
-                                    <h6 class="title">Size:</h6>
-                                    <ul class="range-variant">
-                                        <li>xs</li>
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </div>
-                                <!-- End Product Variation  -->
-
+                            <!-- Start Product Variation  -->
+                            <div class="product-variation product-size-variation">
+                                <h6 class="title">Size:</h6>
+                                <ul class="range-variant">
+                                    <li>xs</li>
+                                    <li>s</li>
+                                    <li>m</li>
+                                    <li>l</li>
+                                    <li>xl</li>
+                                </ul>
                             </div>
+                            <!-- End Product Variation  -->
+
+
+                            <!-- Remaining product details... -->
 
                             <!-- Start Product Action Wrapper  -->
                             <div class="product-action-wrapper d-flex-center">
@@ -122,22 +109,29 @@
                                 <div class="pro-qty">
                                     <label for="quantity"></label>
                                     <input id="quantity" type="text" value="1">
+
                                 </div>
                                 <!-- End Quantity Action  -->
 
                                 <!-- Start Product Action  -->
                                 <ul class="product-action d-flex-center mb--0">
-                                    <li class="add-to-cart"><a href='<c:url value="cart.jsp"/>' class="axil-btn btn-bg-primary">Add to Cart</a></li>
-                                    <li class="wishlist"><a href='<c:url value="wishlist.jsp"/>' class="axil-btn wishlist-btn"><i class="far fa-heart"></i></a></li>
+                                    <li class="add-to-cart">
+                                        <a href='<c:url value="cart.jsp"/>' class="axil-btn btn-bg-primary">Add to Cart</a>
+                                    </li>
+                                    <li class="wishlist">
+                                        <a href='<c:url value="wishlist.jsp"/>' class="axil-btn wishlist-btn">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <!-- End Product Action  -->
-
                             </div>
                             <!-- End Product Action Wrapper  -->
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- End .single-product-thumb -->
@@ -825,4 +819,26 @@
     </div>
     <!-- End .container -->
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy tất cả các phần tử có class 'product-image-link'
+        var productImageLinks = document.querySelectorAll('.product-image-link');
+
+        // Gán sự kiện click cho mỗi phần tử
+        productImageLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                // Ngăn chặn hành vi mặc định của thẻ a
+                event.preventDefault();
+
+                // Lấy giá trị id từ thuộc tính data-product-id
+                var productId = link.getAttribute('data-product-id');
+
+                // Chuyển hướng đến trang chi tiết sản phẩm với id tương ứng
+                window.location.href = '<c:url value="/views/user/product-details.jsp"/>?id=' + productId;
+            });
+        });
+    });
+</script>
 <!-- End Axil Newsletter Area  -->

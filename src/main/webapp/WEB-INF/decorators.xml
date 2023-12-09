@@ -28,4 +28,8 @@
     <excludes>
         <pattern>/api*</pattern>
     </excludes>
+
+    <decorator name="userRegister" page="/decorators/web/account.jsp">
+        <pattern>/buyer/register</pattern>
+    </decorator>
 </decorators>
