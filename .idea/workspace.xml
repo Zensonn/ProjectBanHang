@@ -9,24 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="&quot;Create add to cart&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="&quot;thong tin san pham home, thong tin chi tiet&quot;">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/user/header-home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/user/header-home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/common/vendor/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/vendor/left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/decorators/user/user-home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/decorators/user/user-home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/user/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/user/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/product-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/product-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/shop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/shop.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +73,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/cart/add-to-cart&quot;,
@@ -257,7 +245,9 @@
       <workItem from="1702082564297" duration="1105000" />
       <workItem from="1702087809863" duration="2614000" />
       <workItem from="1702093245254" duration="2375000" />
-      <workItem from="1702103668193" duration="20685000" />
+      <workItem from="1702103668193" duration="21918000" />
+      <workItem from="1702136115287" duration="273000" />
+      <workItem from="1702136400687" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Create add to cart&quot;">
       <created>1701759338662</created>
@@ -266,15 +256,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701759338662</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;thong tin san pham home, thong tin chi tiet&quot;">
+      <option name="closed" value="true" />
+      <created>1702135095290</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702135095290</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Create add to cart&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Create add to cart&quot;" />
+    <MESSAGE value="&quot;thong tin san pham home, thong tin chi tiet&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;thong tin san pham home, thong tin chi tiet&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -792,6 +792,7 @@
                     </div>
                 </div>
             </div>
+        </div>
             <!-- End .slick-single-layout -->
 
         </div>
