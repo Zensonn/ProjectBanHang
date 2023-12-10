@@ -9,32 +9,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="&quot;Create add to cart&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/54330ef7517bd48473e2e0f3aa197fb13af39cad" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/68df0c5be86341afbb7ae4368553968b5e2d3287" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/953a4e44f28f2f13968bc3d371a03856b812fa67" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be72e0c5bd64994d0de97dd4be1f45abee72c474" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd2d16966ef96e7bdaf48831ce3a0e33c983cc51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd9f42ab451b599e727c7d64ba8a3e3dbb1e8ede" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/d/4d9c112c91516425fa961173280950a31a0d63a9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/513632c57835d63a855a0d10233b05986f69e14e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/4/54330ef7517bd48473e2e0f3aa197fb13af39cad" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/2/620ff5796ba4218f0be5089b8e70393493acb073" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/8/68df0c5be86341afbb7ae4368553968b5e2d3287" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/711f89b3d33e125a63fbfd0fee317d5364aa7f97" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/734280cf88e40c9ba229212af2c68be85daebfed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/5/953a4e44f28f2f13968bc3d371a03856b812fa67" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a13235214e56b5a87e8400409fe362a35526d446" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/e/be72e0c5bd64994d0de97dd4be1f45abee72c474" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d597502761a7463d9872746e3c883863cac12f82" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/d/fd2d16966ef96e7bdaf48831ce3a0e33c983cc51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/d/fd9f42ab451b599e727c7d64ba8a3e3dbb1e8ede" beforeDir="false" />
+    <list default="true" id="6ef2fc12-71e8-4198-80f3-5c557b6bad97" name="Changes" comment="&quot;Create add to cart v2&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/OrderItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/config/VNPayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2cb4ef42e0da0b4cfc90634dc5019a72f7b77a1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2cb4ef42e0da0b4cfc90634dc5019a72f7b77a1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dcbf783d75182f56a2e046c30cc19c23ea49364c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebee72c94ed01c6026f4617c8f3ba7ecff0bee57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/c/dcbf783d75182f56a2e046c30cc19c23ea49364c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/b/ebee72c94ed01c6026f4617c8f3ba7ecff0bee57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/OrdersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/DAO/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/controller/vendor/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IOrdersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/OrdersServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hcmute/team7/azshop/utils/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/vendor/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/vendor/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/my-account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/vendor/order/order-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +65,10 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="Interface" />
-        <option value="Servlet" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Servlet" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,25 +109,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/vendor-manage-product",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/AZSHOP",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/vendor-manage-product&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WorkSpace/VNPAY-Springboot-Demo-main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Mon Hoc HKI 2023-2024\Lap_Trinh_Web\CuoiKy\src\main\webapp\views\vendor" />
@@ -257,7 +276,12 @@
       <workItem from="1701673381943" duration="1028000" />
       <workItem from="1701674479214" duration="21000" />
       <workItem from="1701674665438" duration="3341000" />
-      <workItem from="1701759121705" duration="330000" />
+      <workItem from="1701759121705" duration="12037000" />
+      <workItem from="1702004541881" duration="3799000" />
+      <workItem from="1702089931766" duration="9067000" />
+      <workItem from="1702108469305" duration="5801000" />
+      <workItem from="1702130439643" duration="16022000" />
+      <workItem from="1702175700397" duration="4515000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Create add to cart&quot;">
       <created>1701759338662</created>
@@ -266,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701759338662</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Create add to cart v2&quot;">
+      <created>1701759522511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701759522511</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +305,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Create add to cart&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Create add to cart&quot;" />
+    <MESSAGE value="&quot;Create add to cart v2&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Create add to cart v2&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -52,7 +52,7 @@
                                 <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-downloads" role="tab" aria-selected="false"><i class="fas fa-file-download"></i>Tải xuống</a>
                                 <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-address" role="tab" aria-selected="false"><i class="fas fa-home"></i>Tài khoản</a>
                                 <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-account" role="tab" aria-selected="false"><i class="fas fa-key"></i>Đổi mật khẩu</a>
-                                <a class="nav-item nav-link" href='<c:url value="/buyer/logout"/>'><i class="fal fa-sign-out"></i>Log out</a>
+                                <a class="nav-item nav-link" href='<c:url value="/user/logout"/>'><i class="fal fa-sign-out"></i>Log out</a>
                             </div>
                         </nav>
                     </aside>
@@ -61,7 +61,7 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel">
                             <div class="axil-dashboard-overview">
-                                <div class="welcome-text">Xin chào ${customer.userName} (không phải <span>${customer.userName}?</span> <a href='<c:url value="buyer/logout"/>'>Đăng xuất</a>)</div>
+                                <div class="welcome-text">Xin chào ${customer.userName} (không phải <span>${customer.userName}?</span> <a href='<c:url value="user/logout"/>'>Đăng xuất</a>)</div>
                                 <p>Trong phần tài khoản của mình, bạn có thể xem các đơn đặt hàng gần đây, quản lý địa chỉ giao hàng và thanh toán cũng như chỉnh sửa mật khẩu và chi tiết tài khoản của mình.</p>
                             </div>
                         </div>
@@ -75,45 +75,34 @@
                                             <th scope="col">Ngày</th>
                                             <th scope="col">Trạng thái</th>
                                             <th scope="col">Tổng tiển</th>
-                                            <th scope="col">Xác nhận</th>
+                                            <th scope="col">Đã nhận hàng</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">#6523</th>
-                                            <td>September 10, 2020</td>
-                                            <td>Processing</td>
-                                            <td>$326.63 for 3 items</td>
-                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#6523</th>
-                                            <td>September 10, 2020</td>
-                                            <td>On Hold</td>
-                                            <td>$326.63 for 3 items</td>
-                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#6523</th>
-                                            <td>September 10, 2020</td>
-                                            <td>Processing</td>
-                                            <td>$326.63 for 3 items</td>
-                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#6523</th>
-                                            <td>September 10, 2020</td>
-                                            <td>Processing</td>
-                                            <td>$326.63 for 3 items</td>
-                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#6523</th>
-                                            <td>September 10, 2020</td>
-                                            <td>Processing</td>
-                                            <td>$326.63 for 3 items</td>
-                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
-                                        </tr>
+                                        <c:if test="${not empty orders}">
+                                            <c:forEach var="order" items="${orders}">
+                                                <tr>
+                                                    <th scope="row">#${order.id}</th>
+                                                    <td>
+                                                        <c:if test="${not empty order.createdAt}">
+                                                            <fmt:formatDate pattern="dd-MM-yyyy" value="${order.createdAt}" />
+                                                        </c:if>
+                                                    </td>
+                                                    <td>${order.status}</td>
+                                                    <td>${order.totalPrice}</td>
+                                                    <td>
+                                                        <c:choose>
+                                                            <c:when test="${order.status == 'COMPLETED'}">
+                                                                <span class="axil-btn view-btn">Đã nhận</span>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <a href='<c:url value="/completed-order?id=${order.id}"/>' class="axil-btn view-btn">Xác nhận</a>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+                                        </c:if>
                                         </tbody>
                                     </table>
                                 </div>

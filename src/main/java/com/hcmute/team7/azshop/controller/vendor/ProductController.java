@@ -78,7 +78,7 @@ public class ProductController extends HttpServlet {
                 totalPage++;
             }
 
-            List<Product> products = productService.findAll(keyword, page, pageSize);
+            List<Product> products = productService.findAll(keyword, page, pageSize, user.getStore().getId());
 
             List<Category> categories = categoryService.findAll();
             request.setAttribute("categories", categories);
@@ -101,19 +101,27 @@ public class ProductController extends HttpServlet {
             request.setCharacterEncoding(Constant.ENCODING);
             response.setCharacterEncoding(Constant.ENCODING);
 
-            Product product = new Product();
-            BeanUtils.populate(product, request.getParameterMap());
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("account");
 
-            if (request.getPart("image").getSize() != 0) {
-                String fileName = " " + System.currentTimeMillis();
-                product.setImage(UploadUtils.processUpload("image", request, Constant.DIR + "\\product\\", fileName));
+            if (user != null && user.getRole() == Role.VENDOR) {
+                Product product = new Product();
+                BeanUtils.populate(product, request.getParameterMap());
+
+                if (request.getPart("image").getSize() != 0) {
+                    String fileName = " " + System.currentTimeMillis();
+                    product.setImage(UploadUtils.processUpload("image", request, Constant.DIR + "\\product\\", fileName));
+                }
+                Long categoryID = Long.valueOf(request.getParameter("category.id"));
+                Category category = categoryService.findById(categoryID);
+                product.setCategory(category);
+
+                productService.update(product, user.getStore());
+                response.sendRedirect(Constant.Url.VENDOR_PRODUCT);
+            } else {
+                response.sendRedirect("/user/login");
             }
-            Long categoryID = Long.valueOf(request.getParameter("category.id"));
-            Category category = categoryService.findById(categoryID);
-            product.setCategory(category);
 
-            productService.update(product);
-            response.sendRedirect(Constant.Url.VENDOR_PRODUCT);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -142,33 +150,41 @@ public class ProductController extends HttpServlet {
             Product updateProduct = new Product();
             BeanUtils.populate(updateProduct, request.getParameterMap());
 
-            // Cập nhật category
-            Long categoryId = Long.parseLong(request.getParameter("category.id"));
-            Category category = categoryService.findById(categoryId);
-            updateProduct.setCategory(category);
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("account");
 
-            Product oldProduct = productService.findById(updateProduct.getId());
+            if (user != null && user.getRole() == Role.VENDOR) {
+                // Cập nhật category
+                Long categoryId = Long.parseLong(request.getParameter("category.id"));
+                Category category = categoryService.findById(categoryId);
+                updateProduct.setCategory(category);
 
-            // Xử lý hình ảnh
-            if (request.getPart("image").getSize() == 0) {
-                updateProduct.setImage(oldProduct.getImage());
-            } else {
-                if (oldProduct.getImage() != null) {
-                    // Xóa ảnh cũ đi
-                    String fileName = oldProduct.getImage();
-                    File file = new File(Constant.DIR + "\\product\\" + fileName);
-                    if (file.delete()) {
-                        System.out.println("Đã xóa thành công");
-                    } else {
-                        System.out.println(Constant.DIR + "\\product\\" + fileName);
+                Product oldProduct = productService.findById(updateProduct.getId());
+
+                // Xử lý hình ảnh
+                if (request.getPart("image").getSize() == 0) {
+                    updateProduct.setImage(oldProduct.getImage());
+                } else {
+                    if (oldProduct.getImage() != null) {
+                        // Xóa ảnh cũ đi
+                        String fileName = oldProduct.getImage();
+                        File file = new File(Constant.DIR + "\\product\\" + fileName);
+                        if (file.delete()) {
+                            System.out.println("Đã xóa thành công");
+                        } else {
+                            System.out.println(Constant.DIR + "\\product\\" + fileName);
+                        }
                     }
+                    String fileName = " " + System.currentTimeMillis();
+                    updateProduct.setImage(UploadUtils.processUpload("image", request, Constant.DIR + "\\product\\", fileName));
                 }
-                String fileName = " " + System.currentTimeMillis();
-                updateProduct.setImage(UploadUtils.processUpload("image", request, Constant.DIR + "\\product\\", fileName));
+
+                productService.update(updateProduct, user.getStore());
+                response.sendRedirect(Constant.Url.VENDOR_PRODUCT);
+            } else {
+                response.sendRedirect("/user/login");
             }
 
-            productService.update(updateProduct);
-            response.sendRedirect(Constant.Url.VENDOR_PRODUCT);
         } catch (Exception e) {
             e.printStackTrace();
         }

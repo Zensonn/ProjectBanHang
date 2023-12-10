@@ -22,8 +22,8 @@ public class Email {
         boolean test = false;
 
         String toEmail = user.getEmail();
-        String fromEmail = "abc";
-        String password = "abc";
+        String fromEmail = "20133024@student.hcmute.edu.vn";
+        String password = "xxx";
 
         try {
             Properties properties = configEmail(new Properties());
@@ -59,8 +59,8 @@ public class Email {
         boolean test = false;
 
         String toEmail = user.getEmail();
-        String fromEmail = "abc";
-        String password = "abc";
+        String fromEmail = "20133024@student.hcmute.edu.vn";
+        String password = "xxx";
 
         try {
             Properties properties = configEmail(new Properties());

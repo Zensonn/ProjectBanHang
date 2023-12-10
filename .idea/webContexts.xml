@@ -12,6 +12,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/category/category-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/category" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/subcategory/subcategory-form.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/subcategory" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/cart.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/checkout.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
       </map>
     </option>
   </component>
