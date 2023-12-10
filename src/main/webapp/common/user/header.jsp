@@ -36,13 +36,10 @@
                                 <a href="#">Help</a>
                             </li>
                             <li>
-                                <a href='<c:url value="/vendor/product"/>'>Kênh người bán </a>
+                                <a href='<c:url value="/user/login"/>'>Kênh người bán </a>
                             </li>
-<%--                            <li>--%>
-<%--                                <a href='<c:url value="/login"/>'>Đăng nhập</a>--%>
-<%--                            </li>--%>
                             <li>
-                                <a href='<c:url value="/views/user/register.jsp"/>'>Đăng ký</a>
+                                <a href='<c:url value="/buyer/register"/>'>Đăng ký</a>
                             </li>
                         </ul>
                     </div>
@@ -56,10 +53,10 @@
         <div class="container">
             <div class="header-navbar">
                 <div class="header-brand">
-                    <a href='<c:url value="/trang-chu"/>' class="logo logo-dark">
+                    <a href='<c:url value="/home"/>' class="logo logo-dark">
                         <img src='<c:url value="/templates/user/images/logo/logo.png"/>' alt="Site Logo">
                     </a>
-                    <a href='<c:url value="/trang-chu"/>' class="logo logo-light">
+                    <a href='<c:url value="/home"/>' class="logo logo-light">
                         <img src='<c:url value="/templates/user/images/logo/logo-light.png"/>' alt="Site Logo">
                     </a>
                 </div>
@@ -68,16 +65,16 @@
                     <nav class="mainmenu-nav">
                         <button class="mobile-close-btn mobile-nav-toggler"><i class="fas fa-times"></i></button>
                         <div class="mobile-nav-brand">
-                            <a href='<c:url value="/trang-chu"/>' class="logo">
+                            <a href='<c:url value="/home"/>' class="logo">
                                 <img src='<c:url value="/templates/user/images/logo/logo.png"/>' alt="Site Logo">
                             </a>
                         </div>
                         <ul class="mainmenu">
                             <li class="">
-                                <a href='<c:url value="/trang-chu"/>'>Trang chủ</a>
+                                <a href='<c:url value="/home"/>'>Trang chủ</a>
                             </li>
                             <li class="">
-                                <a href='<c:url value="/views/user/shop.jsp"/>'>Mua sắm</a>
+                                <a href='<c:url value="/shop"/>'>Mua sắm</a>
                             </li>
                             <li>
                                 <a href='<c:url value="/views/user/about-us.jsp"/>'>Về chúng tôi</a>
@@ -112,8 +109,9 @@
                             </a>
                         </li>
                         <li class="shopping-cart">
-                            <a href="#" class="cart-dropdown-btn">
-                                <span class="cart-count">3</span>
+                        <li class="shopping-cart">
+                            <a href='<c:url value="/view-cart"/>' class="cart-dropdown-btn">
+                                <span class="cart-count">${sessionScope.totalItemInCart}</span>
                                 <i class="flaticon-shopping-cart"></i>
                             </a>
                         </li>
@@ -125,7 +123,7 @@
                                 <span class="title">QUICK LINKS</span>
                                 <ul>
                                     <li>
-                                        <a href='<c:url value="/views/user/my-account.jsp"/>'>Tài khoản của tôi</a>
+                                        <a href='<c:url value="/my-account"/>'>Tài khoản của tôi</a>
                                     </li>
                                     <li>
                                         <a href="#">Initiate return</a>
@@ -137,8 +135,14 @@
                                         <a href="#">Ngôn ngữ</a>
                                     </li>
                                 </ul>
-                                <a href='<c:url value="/views/user/login.jsp"/>' class="axil-btn btn-bg-primary">Login</a>
-                                <div class="reg-footer text-center">Chưa có tài khoản? <a href='<c:url value="/views/user/register.jsp"/>' class="btn-link">Đăng ký.</a></div>
+                                <c:if test="${account == null}">
+                                    <a href='<c:url value="/user/login"/>' class="axil-btn btn-bg-primary">Đăng nhập</a>
+                                    <div class="reg-footer text-center">Chưa có tài khoản? <a href='<c:url value="/buyer/register"/>' class="btn-link">Đăng ký.</a></div>
+                                </c:if>
+
+                                <c:if test="${account != null}">
+                                    <a href='<c:url value="/user/logout"/>' class="axil-btn btn-bg-primary">Đăng xuất</a>
+                                </c:if>
                             </div>
                         </li>
                         <li class="axil-mobile-toggle">

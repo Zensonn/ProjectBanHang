@@ -8,10 +8,14 @@
                 <a href='<c:url value="/home"/>' class="site-logo"><img
                         src='<c:url value="/templates/user/images/logo/logo.png"/>' alt="logo"></a>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <div class="singin-header-btn">
-                    <p>Chưa có tài khoản?</p>
                     <a href='<c:url value="/buyer/register"/>' class="axil-btn btn-bg-secondary sign-up-btn">Đăng ký ngay</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="singin-header-btn">
+                    <a href='<c:url value="/vendor/register"/>' class="axil-btn btn-bg-secondary sign-up-btn">Tạo của hàng mới</a>
                 </div>
             </div>
         </div>
@@ -29,7 +33,7 @@
                 <div class="axil-signin-form">
                     <h3 class="title">Đăng nhập vào eTrade.</h3>
                     <p class="b2 mb--55">Nhập thông tin tài khoản của bạn</p>
-                    <form action='<c:url value="/buyer/login"/>' method="post" class="singin-form">
+                    <form action='<c:url value="/user/login"/>' method="post" class="singin-form">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input id="email" type="email" class="form-control" name="email">
@@ -43,7 +47,7 @@
                             <label class="form-check-label" for="flexCheckDefault">
                                 Nhớ tôi
                             </label>
-                            <a href='<c:url value="/buyer/forgot"/>' class="forgot-btn">Quên mật khẩu?</a>
+                            <a href='<c:url value="/user/forgot"/>' class="forgot-btn">Quên mật khẩu?</a>
                         </div>
                         <div class="form-group mt-5">
                             <button type="submit" class="axil-btn btn-bg-primary">Đăng nhập</button>

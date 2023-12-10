@@ -22,7 +22,7 @@ public class Email {
         boolean test = false;
 
         String toEmail = user.getEmail();
-        String fromEmail = "xxx";
+        String fromEmail = "20133024@student.hcmute.edu.vn";
         String password = "xxx";
 
         try {
@@ -60,7 +60,7 @@ public class Email {
 
         String toEmail = user.getEmail();
         String fromEmail = "20133024@student.hcmute.edu.vn";
-        String password = "Bang097776505621";
+        String password = "xxx";
 
         try {
             Properties properties = configEmail(new Properties());

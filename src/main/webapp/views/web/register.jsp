@@ -11,7 +11,7 @@
             <div class="col-md-6">
                 <div class="singin-header-btn">
                     <p>Đã là thành viên hay chưa?</p>
-                    <a href='<c:url value="/buyer/login"/>' class="axil-btn btn-bg-secondary sign-up-btn">Đăng nhập</a>
+                    <a href='<c:url value="/user/login"/>' class="axil-btn btn-bg-secondary sign-up-btn">Đăng nhập</a>
                 </div>
             </div>
         </div>

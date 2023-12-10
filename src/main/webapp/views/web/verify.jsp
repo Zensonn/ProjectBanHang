@@ -11,7 +11,7 @@
             <div class="col-md-6">
                 <div class="singin-header-btn">
                     <p>Already a member?</p>
-                    <a href='<c:url value="/buyer/login"/>' class="axil-btn btn-bg-secondary sign-up-btn">Đăng nhập</a>
+                    <a href='<c:url value="/user/login"/>' class="axil-btn btn-bg-secondary sign-up-btn">Đăng nhập</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="axil-signin-form">
                     <h3 class="title">I'm New Here</h3>
                     <p class="b2 mb--55">Enter your detail below</p>
-                    <form action='<c:url value="/buyer/verifyCode"/>' method="post" class="singin-form">
+                    <form action='<c:url value="/user/verifyCode"/>' method="post" class="singin-form">
                         <div class="form-group">
                             <label for="authCode">OTP</label>
                             <input type="text" class="form-control" id="authCode" name="authCode">

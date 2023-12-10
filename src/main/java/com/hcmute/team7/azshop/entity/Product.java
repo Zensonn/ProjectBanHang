@@ -22,6 +22,7 @@ public class Product implements Serializable {
     private int price;
     @Column(nullable = false)
     private int promotionalPrice;
+    private int percentDiscount;
     @Column(nullable = false)
     private int quantity;
     private int sold;
@@ -41,8 +42,8 @@ public class Product implements Serializable {
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
-    @OneToOne(mappedBy = "product")
-    private CartItem cartItem;
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItems;
     @OneToOne(mappedBy = "product")
     private OrderItem orderItem;
     @OneToMany(mappedBy = "product")
@@ -59,12 +60,13 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, int price, int promotionalPrice, int quantity, int sold, boolean isSelling, String image, Date createdAt, Date updatedAt, Category category, Style style, Store store, CartItem cartItem, OrderItem orderItem, List<Review> reviews) {
+    public Product(Long id, String name, String description, int price, int promotionalPrice, int percentDiscount, int quantity, int sold, boolean isSelling, String image, Date createdAt, Date updatedAt, Category category, Style style, Store store, List<CartItem> cartItem, OrderItem orderItem, List<Review> reviews) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.promotionalPrice = promotionalPrice;
+        this.percentDiscount = percentDiscount;
         this.quantity = quantity;
         this.sold = sold;
         this.isSelling = isSelling;
@@ -74,7 +76,7 @@ public class Product implements Serializable {
         this.category = category;
         this.style = style;
         this.store = store;
-        this.cartItem = cartItem;
+        this.cartItems = cartItem;
         this.orderItem = orderItem;
         this.reviews = reviews;
     }
@@ -191,12 +193,12 @@ public class Product implements Serializable {
         this.store = store;
     }
 
-    public CartItem getCartItem() {
-        return cartItem;
+    public List<CartItem> getCartItems() {
+        return cartItems;
     }
 
-    public void setCartItem(CartItem cartItem) {
-        this.cartItem = cartItem;
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
     }
 
     public OrderItem getOrderItem() {
@@ -213,5 +215,13 @@ public class Product implements Serializable {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public int getPercentDiscount() {
+        return percentDiscount;
+    }
+
+    public void setPercentDiscount(int percentDiscount) {
+        this.percentDiscount = percentDiscount;
     }
 }

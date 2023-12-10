@@ -10,18 +10,20 @@ public class Cart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int totalItem;
+    private int totalMoney;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CartItem> cartItems;
     @PrePersist
     protected void onCreate() {
@@ -35,13 +37,31 @@ public class Cart implements Serializable {
     public Cart() {
     }
 
-    public Cart(Long id, Date createdAt, Date updatedAt, User user, Store store, Set<CartItem> cartItems) {
+    public Cart(Long id, int totalItem, int totalMoney, Date createdAt, Date updatedAt, User user, Store store, Set<CartItem> cartItems) {
         this.id = id;
+        this.totalItem = totalItem;
+        this.totalMoney = totalMoney;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.user = user;
         this.store = store;
         this.cartItems = cartItems;
+    }
+
+    public int getTotalItem() {
+        return totalItem;
+    }
+
+    public void setTotalItem(int totalItem) {
+        this.totalItem = totalItem;
+    }
+
+    public int getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(int totalMoney) {
+        this.totalMoney = totalMoney;
     }
 
     public Long getId() {

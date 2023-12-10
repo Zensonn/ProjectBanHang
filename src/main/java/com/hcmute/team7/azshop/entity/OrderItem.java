@@ -15,14 +15,15 @@ public class OrderItem implements Serializable {
     @CollectionTable(joinColumns = @JoinColumn(name = "order_item_id"))
     private List<Long> styleValueIds;
     @Column(nullable = false)
-    private int count;
+    private int quantity;
+    private int unitPrice;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-    @ManyToOne
-    @JoinColumn(name = "order_id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "orders_id")
     private Orders orders;
     @OneToOne
     @JoinColumn(name = "product_id")
@@ -41,15 +42,32 @@ public class OrderItem implements Serializable {
     public OrderItem() {
     }
 
-    public OrderItem(Long id, List<Long> styleValueIds, int count, Date createdAt, Date updatedAt, Orders orders, Product product, StyleValue styleValue) {
+    public OrderItem(Long id, List<Long> styleValueIds, int quantity, int unitPrice, Date createdAt, Date updatedAt, Orders orders, Product product, StyleValue styleValue) {
         this.id = id;
         this.styleValueIds = styleValueIds;
-        this.count = count;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.orders = orders;
         this.product = product;
         this.styleValue = styleValue;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(int unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Long getId() {
@@ -69,11 +87,11 @@ public class OrderItem implements Serializable {
     }
 
     public int getCount() {
-        return count;
+        return quantity;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCount(int quantity) {
+        this.quantity = quantity;
     }
 
     public Date getCreatedAt() {

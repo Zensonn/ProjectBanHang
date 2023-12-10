@@ -5,6 +5,14 @@
         <pattern>/admin*</pattern>
     </decorator>
 
+    <decorator name="registerVendor" page="/decorators/web/registerVendor.jsp">
+        <pattern>/vendor/register</pattern>
+    </decorator>
+
+    <decorator name="registerBuyer" page="/decorators/web/account.jsp">
+        <pattern>/buyer/register</pattern>
+    </decorator>
+
     <decorator name="vendor" page="vendor/vendor.jsp">
         <pattern>/vendor*</pattern>
     </decorator>
@@ -14,20 +22,8 @@
     </decorator>
 
     <decorator name="login" page="/decorators/web/account.jsp">
-        <pattern>/buyer/*</pattern>
+        <pattern>/user/*</pattern>
     </decorator>
-
-<!--    <decorator name="register" page="/decorators/web/register.jsp">-->
-<!--        <pattern>/register</pattern>-->
-<!--    </decorator>-->
-
-<!--    <decorator name="forgot" page="/decorators/web/forgot-password.jsp">-->
-<!--        <pattern>/forgot</pattern>-->
-<!--    </decorator>-->
-
-<!--    <decorator name="verifyCode" page="/decorators/web/verify.jsp">-->
-<!--        <pattern>/verifyCode</pattern>-->
-<!--    </decorator>-->
 
     <decorator name="user" page="user/user.jsp">
         <pattern>/*</pattern>

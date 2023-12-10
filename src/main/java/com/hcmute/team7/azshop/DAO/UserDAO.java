@@ -3,10 +3,7 @@ package com.hcmute.team7.azshop.DAO;
 import com.hcmute.team7.azshop.config.JPAConfig;
 import com.hcmute.team7.azshop.entity.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.NoResultException;
-import javax.persistence.Query;
+import javax.persistence.*;
 
 public class UserDAO extends Repository<User> {
     public UserDAO() {

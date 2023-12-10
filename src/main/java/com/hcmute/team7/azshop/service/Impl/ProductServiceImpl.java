@@ -3,6 +3,7 @@ package com.hcmute.team7.azshop.service.Impl;
 
 import com.hcmute.team7.azshop.DAO.ProductDAO;  // Update the import
 import com.hcmute.team7.azshop.entity.Product;  // Update the import
+import com.hcmute.team7.azshop.entity.Store;
 import com.hcmute.team7.azshop.service.IProductService;  // Update the import
 
 import javax.inject.Inject;
@@ -11,15 +12,19 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService {  // Update the interface
 
     @Inject
-    private ProductDAO productDAO;  // Update the DAO
+    private ProductDAO productDAO;
 
     @Override
-    public void create(Product product) {
+    public void create(Product product, Store store) {
+        product.setStore(store);
+        product.setPromotionalPrice(product.getPrice() - ((product.getPrice() * product.getPercentDiscount()) / 100));
         productDAO.create(product);
     }
 
     @Override
-    public void update(Product product) {
+    public void update(Product product, Store store) {
+        product.setStore(store);
+        product.setPromotionalPrice(product.getPrice() - ((product.getPrice() * product.getPercentDiscount()) / 100));
         productDAO.update(product);
     }
 
@@ -34,8 +39,8 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
     }
 
     @Override
-    public List<Product> findAll(String keyword, int page, int pageSize) {
-        return productDAO.findAll(keyword, page, pageSize);
+    public List<Product> findAll(String keyword, int page, int pageSize, Long storeId) {
+        return productDAO.findAll(keyword, page, pageSize, storeId);
     }
 
     @Override
