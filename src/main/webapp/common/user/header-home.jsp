@@ -60,228 +60,51 @@
                     <aside class="header-department">
                         <button class="header-department-text department-title">
                             <span class="icon"><i class="fal fa-bars"></i></span>
-                            <span class="text">Categories</span>
+                            <span class="text">Danh Mục</span>
                         </button>
                         <nav class="department-nav-menu">
                             <button class="sidebar-close"><i class="fas fa-times"></i></button>
                             <ul class="nav-menu-list">
                                 <li>
-                                    <a href="#" class="nav-link has-megamenu">
+                                    <a href='<c:url value="/shop"/>' class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-01.png" />' alt="Department"></span>
-                                        <span class="menu-text">Fashion</span>
+                                        <span class="menu-text">Thời Trang</span>
                                     </a>
-                                    <div class="department-megamenu">
-                                        <div class="department-megamenu-wrap">
-                                            <div class="department-submenu-wrap">
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Men</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                    </ul>
-                                                    <h3 class="submenu-heading">Baby</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Cloths</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Gear</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toddler</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toys</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Women</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Tops</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jumpsuits</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Coats</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Sweater</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Accessories</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Handbag</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shoes</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Wallets</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="featured-product">
-                                                <h3 class="featured-heading">Featured</h3>
-                                                <div class="product-list">
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature1.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature2.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature3.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature4.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="axil-btn btn-bg-primary">See All Offers</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link has-megamenu">
+                                    <a href="#" class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-02.png" />' alt="Department"></span>
-                                        <span class="menu-text">Electronics</span>
+                                        <span class="menu-text">Thiết bị điện tử</span>
                                     </a>
-                                    <div class="department-megamenu">
-                                        <div class="department-megamenu-wrap">
-                                            <div class="department-submenu-wrap">
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Men</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                    </ul>
-                                                    <h3 class="submenu-heading">Baby</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Cloths</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Gear</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toddler</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toys</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Women</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Tops</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jumpsuits</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Coats</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Sweater</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Accessories</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Handbag</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shoes</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Wallets</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="featured-product">
-                                                <h3 class="featured-heading">Featured</h3>
-                                                <div class="product-list">
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature1.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature2.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature3.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature4.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="axil-btn btn-bg-primary">See All Offers</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link has-megamenu">
+                                    <a href="#" class="nav-link ">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-03.png" />' alt="Department"></span>
-                                        <span class="menu-text">Home Decor</span>
+                                        <span class="menu-text">Trang trí nội thất</span>
                                     </a>
-                                    <div class="department-megamenu">
-                                        <div class="department-megamenu-wrap">
-                                            <div class="department-submenu-wrap">
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Men</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                    </ul>
-                                                    <h3 class="submenu-heading">Baby</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Cloths</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Gear</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toddler</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Baby Toys</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Women</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jeans</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>T-shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shirts</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Tops</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Jumpsuits</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Coats</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Sweater</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="department-submenu">
-                                                    <h3 class="submenu-heading">Accessories</h3>
-                                                    <ul>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Handbag</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Shoes</a></li>
-                                                        <li><a href='<c:url value="/views/user/shop.jsp"/>'>Wallets</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="featured-product">
-                                                <h3 class="featured-heading">Featured</h3>
-                                                <div class="product-list">
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature1.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature2.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature3.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                    <div class="item-product">
-                                                        <a href="#"><img src='<c:url value="/templates/user/images/product/product-feature4.png"/>' alt="Featured Product"></a>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="axil-btn btn-bg-primary">See All Offers</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
                                 <li>
                                     <a href="#" class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-04.png" />' alt="Department"></span>
-                                        <span class="menu-text">Medicine</span>
+                                        <span class="menu-text">Thuốc</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-05.png" />' alt="Department"></span>
-                                        <span class="menu-text">Furniture</span>
+                                        <span class="menu-text">Nội thất</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-06.png" />' alt="Department"></span>
-                                        <span class="menu-text">Crafts</span>
+                                        <span class="menu-text">Đồ thủ công</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="nav-link">
                                         <span class="menu-icon"><img src='<c:url value="/templates/user/images/product/categories/cat-07.png" />' alt="Department"></span>
-                                        <span class="menu-text">Accessories</span>
+                                        <span class="menu-text">Phụ kiện</span>
                                     </a>
                                 </li>
                                 <li>

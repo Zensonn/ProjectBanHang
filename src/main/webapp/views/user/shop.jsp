@@ -11,7 +11,7 @@
                         <li class="separator"></li>
                         <li class="axil-breadcrumb-item active" aria-current="page">Mua sắm</li>
                     </ul>
-                    <h1 class="title">Explore All Products</h1>
+                    <h1 class="title">Khám phá tất cả sản phẩm</h1>
                 </div>
             </div>
             <div class="col-lg-6 col-md-4">
@@ -36,49 +36,23 @@
                         <button class="sidebar-close filter-close-btn"><i class="fas fa-times"></i></button>
                     </div>
                     <div class="toggle-list product-categories active">
-                        <h6 class="title">CATEGORIES</h6>
+                        <h6 class="title">Danh Mục</h6>
                         <div class="shop-submenu">
                             <ul>
-                                <li class="current-cat"><a href="#">Sun Care</a></li>
-                                <li><a href="#">Night Care</a></li>
-                                <li><a href="#">Treatments</a></li>
-                                <li><a href="#">Moisturizers</a></li>
-                                <li><a href="#">Eye Care</a></li>
-                                <li><a href="#">Masks</a></li>
-                                <li><a href="#">Featured</a></li>
-                                <li><a href="#">On Sale</a></li>
+                                <li>
+                                    <input type="radio" id="allProductsRadio" name="category" value="All" checked>
+                                    <label for="allProductsRadio">Tất cả sản phẩm</label>
+                                </li>
+                                <c:forEach items="${categories}" var="category">
+                                    <li>
+                                        <input type="radio" id="${category.id}Radio" name="category" value="${category.id}">
+                                        <label for="${category.id}Radio">${category.name}</label>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
-                    </div>
-                    <div class="toggle-list product-categories product-gender active">
-                        <h6 class="title">GENDER</h6>
-                        <div class="shop-submenu">
-                            <ul>
-                                <li class="chosen"><a href="#">Men (40)</a></li>
-                                <li><a href="#">Women (56)</a></li>
-                                <li><a href="#">Unisex (18)</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="toggle-list product-color active">
-                        <h6 class="title">COLORS</h6>
-                        <div class="shop-submenu">
-                            <ul>
-                                <li class="chosen"><a href="#" class="color-extra-01"></a></li>
-                                <li><a href="#" class="color-extra-02"></a></li>
-                                <li><a href="#" class="color-extra-03"></a></li>
-                                <li><a href="#" class="color-extra-04"></a></li>
-                                <li><a href="#" class="color-extra-05"></a></li>
-                                <li><a href="#" class="color-extra-06"></a></li>
-                                <li><a href="#" class="color-extra-07"></a></li>
-                                <li><a href="#" class="color-extra-08"></a></li>
-                                <li><a href="#" class="color-extra-09"></a></li>
-                                <li><a href="#" class="color-extra-10"></a></li>
-                                <li><a href="#" class="color-extra-11"></a></li>
-                            </ul>
-                        </div>
-                    </div>
 
+                    </div>
                     <div class="toggle-list product-size active">
                         <h6 class="title">SIZE</h6>
                         <div class="shop-submenu">
@@ -141,10 +115,11 @@
                 <!-- End .row -->
                 <div class="row row--15">
                     <c:forEach items="${products}" var="product">
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="axil-product product-style-one mb--30">
+
+                            <div class="col-xl-4 col-sm-6" >
+                                <div class="axil-product product-style-one mb--30" >
                                     <div class="thumbnail">
-                                        <a href='<c:url value="/product-detail"/>'>
+                                        <a href='<c:url value="/product-detail?id=${product.id}"/>'>
                                             <c:url value="/image?fileName=product/${product.image!=null?product.image:'uploads/abc.jpg'}" var="imgProduct"/>
                                             <img src="${imgProduct}" alt="Product Images">
                                         </a>
@@ -179,6 +154,7 @@
                                     </div>
                                 </div>
                             </div>
+
                     </c:forEach>
                 </div>
                 <div class="text-center pt--20">
@@ -190,28 +166,6 @@
     <!-- End .container -->
 </div>
 <!-- End Shop Area  -->
-
-<!-- Start Axil Newsletter Area  -->
-<div class="axil-newsletter-area axil-section-gap pt--0">
-    <div class="container">
-        <div class="etrade-newsletter-wrapper bg_image bg_image--5">
-            <div class="newsletter-content">
-                <span class="title-highlighter highlighter-primary2"><i class="fas fa-envelope-open"></i>Newsletter</span>
-                <h2 class="title mb--40 mb_sm--30">Get weekly update</h2>
-                <div class="input-group newsletter-form">
-                    <div class="position-relative newsletter-inner mb--15">
-                        <label>
-                            <input placeholder="example@gmail.com" type="text">
-                        </label>
-                    </div>
-                    <button type="submit" class="axil-btn mb--15">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End .container -->
-</div>
-<!-- End Axil Newsletter Area  -->
 
 <!-- Product Quick View Modal Start -->
 <div class="modal fade quick-view-product" id="quick-view-modal" tabindex="-1" aria-hidden="true">
@@ -407,4 +361,44 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var categoryRadios = document.querySelectorAll('input[name="category"]');
+        categoryRadios.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    var categoryId = this.value;
+                    var url = categoryId === 'All' ? 'shop' : 'shop?categoryId=' + categoryId;
+                    window.location.href = url;
+                }
+            });
+        });
+
+        function updateRadioButtons() {
+            var currentUrl = new URL(window.location.href);
+            var categoryId = currentUrl.searchParams.get('categoryId');
+            if (categoryId) {
+                var selectedRadio = document.querySelector('input[name="category"][value="' + categoryId + '"]');
+                if (selectedRadio) {
+                    selectedRadio.checked = true;
+                }
+            } else {
+                // Nếu không có tham số categoryId, chọn radio button "Tất cả sản phẩm"
+                var allProductsRadio = document.querySelector('input[name="category"][value="All"]');
+                if (allProductsRadio) {
+                    allProductsRadio.checked = true;
+                }
+            }
+        }
+
+        window.addEventListener('popstate', function() {
+            updateRadioButtons();
+        });
+
+        updateRadioButtons();
+    });
+</script>
+
 <!-- Cart View Modal Start -->
+

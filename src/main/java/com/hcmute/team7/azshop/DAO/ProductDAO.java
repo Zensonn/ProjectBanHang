@@ -1,16 +1,14 @@
 package com.hcmute.team7.azshop.DAO;
 
 import com.hcmute.team7.azshop.config.JPAConfig;
+import com.hcmute.team7.azshop.entity.Category;
 import com.hcmute.team7.azshop.entity.Product;
+import com.hcmute.team7.azshop.entity.Style;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.util.ArrayList;
+import javax.persistence.Query;
+import javax.persistence.criteria.*;
 import java.util.List;
 
 public class ProductDAO extends Repository<Product>{
@@ -38,47 +36,24 @@ public class ProductDAO extends Repository<Product>{
             entityManager.close();
         }
     }
-
-    public List<Product> findAll(String keyword, int firstResult, int maxResults, Long storeId) {
+    public List<Product> findByCategoryId(Long categoryId) {
         EntityManager entityManager = JPAConfig.getEntityManager();
-        if (entityManager == null) {
-            throw new IllegalStateException("EntityManager is null");
-        }
-
-        List<Product> result = new ArrayList<>();
-
         try {
             CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
             CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
             Root<Product> root = criteriaQuery.from(Product.class);
 
+            // Add a Predicate to filter based on category_id
+            if (categoryId != null) {
+                Join<Product, Category> categoryJoin = root.join("category"); // Assuming there is a field named "category" in your entity
+                Predicate categoryPredicate = criteriaBuilder.equal(categoryJoin.get("id"), categoryId);
+                criteriaQuery.where(categoryPredicate);
+            }
+
             criteriaQuery.select(root);
-
-            List<Predicate> predicates = new ArrayList<>();
-            if (keyword != null) {
-                Predicate searchPredicate = criteriaBuilder.like(
-                        criteriaBuilder.lower(root.get("name")),
-                        "%" + keyword.toLowerCase() + "%"
-                );
-                predicates.add(searchPredicate);
-            }
-            if (storeId != null) {
-                Predicate storePredicate = criteriaBuilder.equal(root.get("store").get("id"), storeId);
-                predicates.add(storePredicate);
-            }
-            criteriaQuery.where(predicates.toArray(new Predicate[0]));
-
-            TypedQuery<Product> query = entityManager.createQuery(criteriaQuery);
-            query.setFirstResult((firstResult < 1) ? 0 : (firstResult - 1) * maxResults);
-            query.setMaxResults(maxResults);
-
-            result = query.getResultList();
-        } catch (Exception e) {
-            throw e;
+            return entityManager.createQuery(criteriaQuery).getResultList();
         } finally {
             entityManager.close();
         }
-        return result;
     }
-
 }
