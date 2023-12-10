@@ -36,26 +36,21 @@ public class ShopController extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
     protected void shop(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("account");
 
         // Lấy số lượng sản phẩm trong giỏ hàng
-        if (user != null) {
-            Cart cart = user.getCart();
-            Set<CartItem> cartItems = user.getCart().getCartItems();
-
-            session.setAttribute("totalItemInCart", cart.getTotalItem());
-            request.setAttribute("cartItems", cartItems);
-        } else {
-            session.setAttribute("totalItemInCart", 0);
-        }
+//        if (user != null) {
+//            Cart cart = user.getCart();
+//            Set<CartItem> cartItems = user.getCart().getCartItems();
+//
+//            session.setAttribute("totalItemInCart", cart.getTotalItem());
+//            request.setAttribute("cartItems", cartItems);
+//        } else {
+//            session.setAttribute("totalItemInCart", 0);
+//        }
 
 
 

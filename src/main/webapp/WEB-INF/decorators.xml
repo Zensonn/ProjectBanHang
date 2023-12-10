@@ -9,6 +9,10 @@
         <pattern>/vendor/register</pattern>
     </decorator>
 
+    <decorator name="registerBuyer" page="/decorators/web/account.jsp">
+        <pattern>/buyer/register</pattern>
+    </decorator>
+
     <decorator name="vendor" page="vendor/vendor.jsp">
         <pattern>/vendor*</pattern>
     </decorator>

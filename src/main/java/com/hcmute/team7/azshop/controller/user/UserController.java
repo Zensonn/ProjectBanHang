@@ -1,5 +1,6 @@
 package com.hcmute.team7.azshop.controller.user;
 
+import com.hcmute.team7.azshop.entity.Orders;
 import com.hcmute.team7.azshop.entity.User;
 import com.hcmute.team7.azshop.service.IUserService;
 import com.hcmute.team7.azshop.utils.Constant;
@@ -11,6 +12,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 10, maxFileSize = 1024 * 1024 * 50, maxRequestSize = 1024 * 1024 * 50)
 @WebServlet(urlPatterns = {"/my-account", "/update-account"})
@@ -34,7 +36,9 @@ public class UserController extends HttpServlet {
             String email = user.getEmail();
 
             User customer = userService.findByEmail(email);
+            List<Orders> orders = customer.getOrders();
 
+            request.setAttribute("orders", orders);
             request.setAttribute("customer", customer);
             request.getRequestDispatcher("/views/user/my-account.jsp").forward(request, response);
         }

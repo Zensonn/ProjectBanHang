@@ -4,6 +4,7 @@ import com.hcmute.team7.azshop.enums.Role;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,12 +36,12 @@ public class User {
     private Date updatedAt;
     @OneToOne(mappedBy = "user")
     private Store store;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private Set<Transaction> transactions;
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Cart cart;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private Set<Orders> orders;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Orders> orders;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Review> reviews;
     @PrePersist
@@ -72,7 +73,7 @@ public class User {
         this.role = role;
     }
 
-    public User(Long id, String userName, String fullName, String email, String phone, String code, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Cart cart, Set<Orders> orders, Set<Review> reviews) {
+    public User(Long id, String userName, String fullName, String email, String phone, String code, Boolean isEmailActive, String password, Role role, String addresses, String avatar, Date createdAt, Date updatedAt, Store store, Set<Transaction> transactions, Cart cart, List<Orders> orders, Set<Review> reviews) {
         this.id = id;
         this.userName = userName;
         this.fullName = fullName;
@@ -221,11 +222,11 @@ public class User {
         this.cart = cart;
     }
 
-    public Set<Orders> getOrders() {
+    public List<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Orders> orders) {
+    public void setOrders(List<Orders> orders) {
         this.orders = orders;
     }
 

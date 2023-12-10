@@ -57,7 +57,7 @@
         </li>--%>
 
         <li class="">
-            <a href='<c:url value=""/>'><i class="material-icons">date_range</i><span>Đơn Hàng</span></a>
+            <a href='<c:url value="/vendor/orders"/>'><i class="material-icons">date_range</i><span>Đơn Hàng</span></a>
         </li>
         <li class="">
             <a href="#"><i class="material-icons">library_books</i><span>Thông Tin</span></a>

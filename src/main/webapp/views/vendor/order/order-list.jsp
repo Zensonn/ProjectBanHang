@@ -12,15 +12,14 @@
             <div class="tile-body">
                 <div class="row element-button">
                     <div class="col-sm-2">
-                        <a class="btn btn-add btn-sm" href='<c:url value="/vendor/order/new"/>' title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href='<c:url value="/vendor/orders"/>' title="Thêm"><i
                                 class="fas fa-plus"></i>
-                            Thêm thuộc tính mới</a>
+                            Tải lại</a>
                     </div>
                     <div class="col-sm-2">
                         <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập"><i
                                 class="fas fa-file-upload"></i> Tải từ file</a>
                     </div>
-
                     <div class="col-sm-2">
                         <a class="btn btn-delete btn-sm print-file" type="button" title="In"><i
                                 class="fas fa-print"></i> In dữ liệu</a>
@@ -29,7 +28,6 @@
                         <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
                                 class="fas fa-copy"></i> Sao chép</a>
                     </div>
-
                     <div class="col-sm-2">
                         <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
                     </div>
@@ -58,46 +56,56 @@
                             </label>
                         </div>
                     </div>
-
-                    <!-- Form tìm kiếm -->
-                    <div class="col-sm-12 col-md-6">
-                        <div class="text-sm-right">
-                            <form action="<c:url value="/vendor/order"/>" method="get">
-                                <label for="keyword"></label>
-                                <input type="text" placeholder="Tìm kiếm" id="keyword" name="keyword" value="${keyword}">
-                                <button class="search__btn">
-                                    <img src='<c:url value="/templates/admin/img/search.png"/>' alt="">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
 
                 <table class="table table-hover table-light table-bordered">
                     <thead class="text-primary">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Số điện thoại</th>
-                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Sản phẩm</th>
+                        <th scope="col">Giá trị</th>
+                        <th scope="col">Tên khách hàng</th>
                         <th scope="col">Trạng thái</th>
                         <th scope="col">Tính năng</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="orders" items="${orders}">
+                    <c:forEach var="order" items="${ordersList}">
                         <tr>
-                            <th scope="row">${orders.id}</th>
-                            <td>${orders.phone}</td>
-                            <td>${orders.address}</td>
-                            <td>${orders.status}</td>
+                            <th scope="row">${order.id}</th>
                             <td>
-                                <a type="button" class="btn btn-sm edit" href='<c:url value="/vendor/order/edit?id=${orders.id}"/>'>
-                                    <i class="fas fa-edit mr-1"></i> Sửa
-                                </a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a type="button" class="btn btn-sm trash" href='<c:url value="/vendor/order/delete?id=${orders.id}"/>'>
-                                    <i class="fas fa-trash-alt mr-1"></i> Xóa
-                                </a>
+                                <c:forEach var="orderItem" items="${order.orderItems}">
+                                    ${orderItem.product.name}
+                                </c:forEach>
+                            </td>
+                            <td>
+                                <c:forEach var="orderItem" items="${order.orderItems}">
+                                    <fmt:formatNumber pattern="###,###đ" value="${orderItem.product.price}"/>
+                                </c:forEach>
+                            </td>
+<%--                            <td>${order.paid ? 'Đã thanh toán' : 'Chưa thanh toán'}</td>--%>
+                            <td>${order.user.fullName}</td>
+                            <td>${order.status}</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${order.status == 'COMPLETED'}">
+                                        <a type="button" class="btn btn-sm view" href='<c:url value="/vendor/view-order?id=${order.id}"/>'>
+                                            <i class="fas fa-eye mr-1"></i> Xem đơn
+                                        </a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a type="button" class="btn btn-sm view" href='<c:url value="/vendor/view-order?id=${order.id}"/>'>
+                                            <i class="fas fa-eye mr-1"></i> Xem đơn
+                                        </a>
+                                        <a type="button" class="btn btn-sm edit" href='<c:url value="/vendor/accept-order?id=${order.id}"/>'>
+                                            <i class="fas fa-edit mr-1"></i> Nhận đơn
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a type="button" class="btn btn-sm trash" href='<c:url value="/vendor/cancel-order?id=${order.id}"/>'>
+                                            <i class="fas fa-trash-alt mr-1"></i> Hủy đơn
+                                        </a>
+                                    </c:otherwise>
+                                </c:choose>
                             </td>
                         </tr>
                     </c:forEach>

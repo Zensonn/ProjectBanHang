@@ -56,6 +56,4 @@ public class ProductDAO extends Repository<Product>{
             entityManager.close();
         }
     }
-
-
 }

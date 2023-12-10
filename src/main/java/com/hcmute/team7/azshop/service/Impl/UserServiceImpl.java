@@ -1,7 +1,9 @@
 package com.hcmute.team7.azshop.service.Impl;
 
+import com.hcmute.team7.azshop.DAO.CartDAO;
 import com.hcmute.team7.azshop.DAO.StoreDAO;
 import com.hcmute.team7.azshop.DAO.UserDAO;
+import com.hcmute.team7.azshop.entity.Cart;
 import com.hcmute.team7.azshop.entity.Store;
 import com.hcmute.team7.azshop.enums.Role;
 import com.hcmute.team7.azshop.entity.User;
@@ -13,9 +15,10 @@ public class UserServiceImpl implements IUserService {
 
     @Inject
     private UserDAO userDAO;
-
     @Inject
     private StoreDAO storeDAO;
+    @Inject
+    private CartDAO cartDAO;
 
     @Override
     public User findByEmail(String email) {
@@ -35,7 +38,18 @@ public class UserServiceImpl implements IUserService {
         if (userDAO.checkExistUserName(userName)) {
             return false;
         }
-        userDAO.Register(new User(userName, fullName, email, code, false, password, Role.USER));
+
+        // Tạo một User mới
+        User newUser = new User(userName, fullName, email, code, false, password, Role.USER);
+
+        // Tạo một Cart mới và liên kết với User
+        Cart newCart = new Cart();
+        newUser.setCart(newCart); // Đặt Cart cho User
+        newCart.setUser(newUser); // Đặt User cho Cart
+
+        // Đăng ký User mới và Cart của họ
+        userDAO.Register(newUser);
+
         return true;
     }
 

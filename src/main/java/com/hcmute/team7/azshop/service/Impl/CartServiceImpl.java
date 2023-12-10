@@ -18,22 +18,13 @@ public class CartServiceImpl implements ICartService {
     private CartDAO cartDAO;
     @Inject
     private CartItemDAO cartItemDAO;
-    @Inject
-    private UserDAO userDAO;
 
     @Override
     public void addToCart(Product product, int quantity, User user) {
         Cart cart = user.getCart();
-
-        if (cart == null) {
-            cart = new Cart();
-            user.setCart(cart);
-            userDAO.update(user);
-        }
-
         Set<CartItem> cartItems = cart.getCartItems();
 
-        // Tạo danh sách sản phẩm
+        // Tạo danh sách sản phẩm nếu chưa có
         if (cartItems == null) {
             cartItems = new HashSet<>();
             cart.setCartItems(cartItems);
@@ -45,39 +36,29 @@ public class CartServiceImpl implements ICartService {
         if (cartItem == null) {
             cartItem = new CartItem();
             cartItem.setProduct(product);
-
-            // Kiểm tra sản phẩm có giảm giá không ?
-            if (product.getPercentDiscount() == 0) {
-                cartItem.setTotalPrice(quantity * product.getPrice());
-            } else {
-                cartItem.setTotalPrice(quantity * product.getPromotionalPrice());
-            }
-
             cartItem.setQuantity(quantity);
             cartItem.setCart(cart);
             cartItems.add(cartItem);
-        } else {
-            cartItem.setQuantity(cartItem.getQuantity() + quantity);
 
-            // Kiểm tra sản phẩm có giảm giá không ?
-            if (product.getPercentDiscount() == 0) {
-                cartItem.setTotalPrice(cartItem.getTotalPrice() + (quantity * product.getPrice()));
-            } else {
-                cartItem.setTotalPrice(cartItem.getTotalPrice() + (quantity * product.getPromotionalPrice()));
-            }
+            // Tạo mới cartItem vì nó chưa tồn tại trong cơ sở dữ liệu
+            cartItemDAO.create(cartItem);
+        } else {
+            // Cập nhật số lượng và giá tổng cho cartItem
+            cartItem.setQuantity(cartItem.getQuantity() + quantity);
+            cartItem.setTotalPrice(cartItem.getTotalPrice() + calculateTotalPrice(product, quantity));
+            cartItemDAO.update(cartItem);
         }
 
-        cartItemDAO.update(cartItem);
+        // Tính toán tổng số lượng và tổng tiền một lần cuối cùng
+        cart.setTotalItem(totalItem(cartItems));
+        cart.setTotalMoney(totalMoney(cartItems));
 
-        int totalItem = totalItem(cart.getCartItems());
-        int money = totalMoney(cart.getCartItems());
-
-        cart.setCartItems(cartItems);
-        cart.setUser(user);
-        cart.setTotalItem(totalItem);
-        cart.setTotalMoney(money);
-
-        cartDAO.update(cart);
+        // Cập nhật hoặc tạo mới cart tùy thuộc vào trạng thái của nó
+        if (cart.getId() == null) {
+            cartDAO.create(cart);
+        } else {
+            cartDAO.update(cart);
+        }
     }
 
     @Override
@@ -134,15 +115,14 @@ public class CartServiceImpl implements ICartService {
             return null;
         }
 
-        CartItem cartItem = null;
-
         for (CartItem item : cartItems) {
             if (item.getProduct().getId().equals(productId)) {
-                cartItem = item;
+                return item; // Thoát khỏi vòng lặp ngay khi tìm thấy sản phẩm phù hợp
             }
         }
-        return cartItem;
+        return null; // Trả về null nếu không tìm thấy sản phẩm trong giỏ hàng
     }
+
 
     private int totalItem(Set<CartItem> cartItems) {
         int t = 0;
@@ -157,12 +137,21 @@ public class CartServiceImpl implements ICartService {
 
         for (CartItem cartItem : cartItems) {
             if (cartItem.getProduct().getPercentDiscount() == 0) {
-                money += cartItem.getProduct().getPrice();
+                money += cartItem.getProduct().getPrice() * cartItem.getQuantity();
             } else {
-                money += cartItem.getProduct().getPromotionalPrice();
+                money += cartItem.getProduct().getPromotionalPrice() * cartItem.getQuantity();
             }
         }
 
         return money;
+    }
+
+    private int calculateTotalPrice(Product product, int quantity) {
+        // Kiểm tra sản phẩm có giảm giá không và tính giá
+        if (product.getPercentDiscount() == 0) {
+            return quantity * product.getPrice();
+        } else {
+            return quantity * product.getPromotionalPrice();
+        }
     }
 }

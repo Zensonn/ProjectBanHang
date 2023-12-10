@@ -224,6 +224,4 @@ public class Product implements Serializable {
     public void setPercentDiscount(int percentDiscount) {
         this.percentDiscount = percentDiscount;
     }
-
-
 }

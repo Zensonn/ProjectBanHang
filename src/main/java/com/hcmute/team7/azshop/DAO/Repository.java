@@ -19,13 +19,14 @@ public abstract class Repository<T> {
 
     public void create(T entity) {
         EntityManager entityManager = JPAConfig.getEntityManager();
-        EntityTransaction transaction = null;
+        EntityTransaction transaction = entityManager.getTransaction();
         try {
-            transaction = entityManager.getTransaction();
             transaction.begin();
-            entityManager.persist(entity);
+            //entityManager.persist(entity);
+            entityManager.merge(entity);
             transaction.commit();
         } catch (Exception e) {
+            e.printStackTrace();
             transaction.rollback();
             throw e;
         } finally {

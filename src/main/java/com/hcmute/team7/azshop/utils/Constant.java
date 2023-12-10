@@ -16,7 +16,6 @@ public class Constant {
         public static final String PRODUCT_LIST = "/views/vendor/product/product-list.jsp";
         public static final String PRODUCT_FORM = "/views/vendor/product/product-form.jsp";
         public static final String ORDER_LIST = "/views/vendor/order/order-list.jsp";
-        public static final String ORDER_FORM = "/views/vendor/order/order-form.jsp";
   /*      public static final String STYLE_PRODUCT_VALUE_FORM = "/views/admin/style-value/style-value-form.jsp";
         public static final String STYLE_PRODUCT_VALUE_LIST = "/views/admin/style-value/style-value-list.jsp";*/
     }

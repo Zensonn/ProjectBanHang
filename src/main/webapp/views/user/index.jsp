@@ -644,8 +644,8 @@
                 <span class="subtotal-amount">$610.00</span>
             </h3>
             <div class="group-btn">
-                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
-                <a href='<c:url value="checkout.jsp"/>' class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
+                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">Xem giỏ hàng</a>
+                <a href='<c:url value="/check-out"/>' class="axil-btn btn-bg-secondary checkout-btn">Thanh toán</a>
             </div>
         </div>
     </div>
