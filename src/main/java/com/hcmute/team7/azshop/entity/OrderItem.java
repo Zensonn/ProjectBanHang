@@ -22,10 +22,13 @@ public class OrderItem implements Serializable {
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "orders_id")
     private Orders orders;
-    @OneToOne
+//    @OneToOne
+//    @JoinColumn(name = "product_id")
+//    private Product product;
+    @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
     @ManyToOne
@@ -39,6 +42,7 @@ public class OrderItem implements Serializable {
     protected void onUpdate() {
         updatedAt = new Date();
     }
+
     public OrderItem() {
     }
 

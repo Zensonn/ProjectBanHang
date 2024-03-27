@@ -1,0 +1,17 @@
+
+a
+java:S1192o"FDefine a constant instead of duplicating this literal "image" 4 times.(ó«òÒüÿÿÿÿ
+_
+java:S1192G"IDefine a constant instead of duplicating this literal "pageSize" 3 times.(¾ÂÈù
+g
+java:S1192q"LDefine a constant instead of duplicating this literal "\\product\\" 4 times.(èçâÈşÿÿÿÿ
+g
+java:S1192_"LDefine a constant instead of duplicating this literal "/user/login" 3 times.(ô»‰ıÿÿÿÿ
+a
+java:S1192T"KDefine a constant instead of duplicating this literal "categories" 3 times.(Ññó•
+^
+java:S1192C"HDefine a constant instead of duplicating this literal "account" 3 times.(¾»ì
+j
+java:S4042¬"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ë“«øÿÿÿÿ
+O	java:S106­"9Replace this use of System.out or System.err by a logger.(°œú
+O	java:S106¯"9Replace this use of System.out or System.err by a logger.(ÓĞáÆ

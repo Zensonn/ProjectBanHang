@@ -3,7 +3,7 @@
 <!-- Start Checkout Area  -->
 <div class="axil-checkout-area axil-section-gap">
     <div class="container">
-        <form action='<c:url value="/save-order"/>' method="get">
+        <form>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="axil-checkout-billing">

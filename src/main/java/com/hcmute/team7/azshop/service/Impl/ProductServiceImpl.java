@@ -14,8 +14,6 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
     @Inject
     private ProductDAO productDAO;
 
-
-
     @Override
     public void create(Product product, Store store) {
         product.setStore(store);
@@ -44,7 +42,6 @@ public class ProductServiceImpl implements IProductService {  // Update the inte
     public List<Product> findAll(String keyword, int page, int pageSize, Long storeId) {
         return productDAO.findAll(keyword, page, pageSize, storeId);
     }
-
 
     @Override
     public Product findById(Long productId) {

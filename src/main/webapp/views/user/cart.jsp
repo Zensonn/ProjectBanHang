@@ -55,10 +55,10 @@
                                         <span class="currency-symbol"><fmt:formatNumber pattern="###,###đ" value="${cartItem.product.promotionalPrice * cartItem.quantity}"/></span>
                                     </td>
                                     <td>
-                                        <button type="submit" name="action" value="edit" class="btn btn-sm edit">
+                                        <button type="submit" name="action" value="edit" class="btn btn-sm edit" style="padding: 10px 16px; font-size: 18px; line-height: 1.3333333;">
                                             <i class="fas fa-edit mr-1"></i> Sửa
                                         </button>
-                                        <button type="submit" name="action" value="delete" class="btn btn-sm trash">
+                                        <button type="submit" name="action" value="delete" class="btn btn-sm trash" style="padding: 10px 16px; font-size: 18px; line-height: 1.3333333;">
                                             <i class="fas fa-trash-alt mr-1"></i> Xóa
                                         </button>
                                     </td>
@@ -83,27 +83,7 @@
                                         <td>Tổng tiền sản phẩm</td>
                                         <td><fmt:formatNumber pattern="###,###đ" value="${subTotal}"/></td>
                                     </tr>
-                                    <tr class="orders-shipping">
-                                        <td>Phí giao hàng</td>
-                                        <td>
-                                            <div class="input-group">
-                                                <input type="radio" id="radio1" name="shipping" checked>
-                                                <label for="radio1">Free Shopping</label>
-                                            </div>
-                                            <div class="input-group">
-                                                <input type="radio" id="radio2" name="shipping">
-                                                <label for="radio2">Local: $35.00</label>
-                                            </div>
-                                            <div class="input-group">
-                                                <input type="radio" id="radio3" name="shipping">
-                                                <label for="radio3">Flat rate: $12.00</label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="orders-total">
-                                        <td>Tổng tiền phải trả</td>
-                                        <td class="orders-total-amount">$125.00</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>

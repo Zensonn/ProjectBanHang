@@ -116,7 +116,7 @@
                                 <!-- Start Product Action  -->
                                 <ul class="product-action d-flex-center mb--0">
                                     <li class="add-to-cart">
-                                        <a href='<c:url value="cart.jsp"/>' class="axil-btn btn-bg-primary">Add to Cart</a>
+                                        <a href='<c:url value="/add-to-cart?id=${product.id}"/>' class="axil-btn btn-bg-primary">Thêm vào giỏ</a>
                                     </li>
                                     <li class="wishlist">
                                         <a href='<c:url value="wishlist.jsp"/>' class="axil-btn wishlist-btn">

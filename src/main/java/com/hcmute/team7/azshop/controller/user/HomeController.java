@@ -29,6 +29,23 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+
+        User user = (User) session.getAttribute("account");
+
+        // Lấy số lượng sản phẩm trong giỏ hàng
+        if (user != null) {
+            Cart cart = user.getCart();
+            Set<CartItem> cartItems = user.getCart().getCartItems();
+
+            session.setAttribute("totalItemInCart", cart.getTotalItem());
+            request.setAttribute("cartItems", cartItems);
+            request.setAttribute("cart", user.getCart());
+        } else {
+            session.setAttribute("totalItemInCart", 0);
+        }
+
+
         // Load tất cả sản phẩm từ cơ sở dữ liệu
         List<Product> allProducts = productService.findAll();
 
@@ -40,7 +57,7 @@ public class HomeController extends HttpServlet {
             }
         }
 
-        // Lọc danh sách sản phẩm có percentDiscount > 0 và sắp xếp theo sold giảm dần
+        // Lọc danh sách sản phẩm có sold > 0 và sắp xếp theo sold giảm dần
         List<Product> selling = allProducts.stream()
                 .filter(productSelling -> productSelling.getPercentDiscount() > 0)
                 .sorted(Comparator.comparingInt(Product::getSold).reversed())

@@ -23,7 +23,7 @@ public class Cart implements Serializable {
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<CartItem> cartItems;
     @PrePersist
     protected void onCreate() {

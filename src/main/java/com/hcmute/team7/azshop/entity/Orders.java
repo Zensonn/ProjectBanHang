@@ -24,10 +24,10 @@ public class Orders implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     private Store store;
-    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<OrderItem> orderItems;
     @OneToMany(mappedBy = "orders")
     private List<Review> reviews;

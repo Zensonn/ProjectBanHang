@@ -22,8 +22,8 @@ public abstract class Repository<T> {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            //entityManager.persist(entity);
-            entityManager.merge(entity);
+            entityManager.persist(entity);
+            //entityManager.merge(entity);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,6 +49,23 @@ public abstract class Repository<T> {
             entityManager.close();
         }
     }
+
+    public void saveOrUpdate(T entity) {
+        EntityManager entityManager = JPAConfig.getEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.merge(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            transaction.rollback();
+            throw e;
+        } finally {
+            entityManager.close();
+        }
+    }
+
 
     public void delete(Object id) {
         EntityManager entityManager = JPAConfig.getEntityManager();

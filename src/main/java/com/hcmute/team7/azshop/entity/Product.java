@@ -44,8 +44,10 @@ public class Product implements Serializable {
     private Store store;
     @OneToMany(mappedBy = "product")
     private List<CartItem> cartItems;
-    @OneToOne(mappedBy = "product")
-    private OrderItem orderItem;
+//    @OneToOne(mappedBy = "product")
+//    private OrderItem orderItem;
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItem;
     @OneToMany(mappedBy = "product")
     private List<Review> reviews;
     @PrePersist
@@ -60,7 +62,7 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, int price, int promotionalPrice, int percentDiscount, int quantity, int sold, boolean isSelling, String image, Date createdAt, Date updatedAt, Category category, Style style, Store store, List<CartItem> cartItem, OrderItem orderItem, List<Review> reviews) {
+    public Product(Long id, String name, String description, int price, int promotionalPrice, int percentDiscount, int quantity, int sold, boolean isSelling, String image, Date createdAt, Date updatedAt, Category category, Style style, Store store, List<CartItem> cartItems, List<OrderItem> orderItem, List<Review> reviews) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -76,7 +78,7 @@ public class Product implements Serializable {
         this.category = category;
         this.style = style;
         this.store = store;
-        this.cartItems = cartItem;
+        this.cartItems = cartItems;
         this.orderItem = orderItem;
         this.reviews = reviews;
     }
@@ -201,11 +203,11 @@ public class Product implements Serializable {
         this.cartItems = cartItems;
     }
 
-    public OrderItem getOrderItem() {
+    public List<OrderItem> getOrderItem() {
         return orderItem;
     }
 
-    public void setOrderItem(OrderItem orderItem) {
+    public void setOrderItem(List<OrderItem> orderItem) {
         this.orderItem = orderItem;
     }
 

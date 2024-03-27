@@ -95,8 +95,14 @@
                                                             <c:when test="${order.status == 'COMPLETED'}">
                                                                 <span class="axil-btn view-btn">Đã nhận</span>
                                                             </c:when>
-                                                            <c:otherwise>
+                                                            <c:when test="${order.status == 'SHIPPING'}">
                                                                 <a href='<c:url value="/completed-order?id=${order.id}"/>' class="axil-btn view-btn">Xác nhận</a>
+                                                            </c:when>
+                                                            <c:when test="${order.status == 'PENDING'}">
+                                                                <a href='<c:url value="/cancel-order?id=${order.id}"/>' class="axil-btn view-btn">Hủy đơn</a>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <!-- Không hiển thị nút nếu trạng thái không phải là 'COMPLETED', 'SHIPPING' hoặc 'PENDING' -->
                                                             </c:otherwise>
                                                         </c:choose>
                                                     </td>
@@ -120,10 +126,10 @@
                             <div class="axil-dashboard-address">
                                 <form action='<c:url value="/update-account"/>' method="post" enctype="multipart/form-data" class="account-details-form">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6" >
                                             <div class="form-group">
                                                 <label for="avatar">Ảnh đại diện</label>
-                                                <input type="file" class="form-control mt-3" value="${customer.avatar}" name="avatar" id="avatar">
+                                                <input type="file" class="form-control" value="${customer.avatar}" name="avatar" id="avatar">
                                             </div>
                                         </div>
 

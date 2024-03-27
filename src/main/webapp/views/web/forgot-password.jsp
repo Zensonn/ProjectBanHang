@@ -9,7 +9,7 @@
                         src='<c:url value="/templates/user/images/logo/logo.png"/>' alt="logo"></a>
             </div>
             <div class="col-md-2 d-lg-block d-none">
-                <a href='<c:url value="/buyer/login"/>' class="back-btn"><i class="far fa-angle-left"></i></a>
+                <a href='<c:url value="/user/login"/>' class="back-btn"><i class="far fa-angle-left"></i></a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                     <h3 class="title">Quên mật khẩu?</h3>
                     <p class="b2 mb--55">Nhập địa chỉ email bạn đã sử dụng khi đăng ký và chúng tôi sẽ gửi lại mật khẩu
                         cho bạn qua mail.</p>
-                    <form action='<c:url value="/buyer/forgot"/>' method="post" class="singin-form">
+                    <form action='<c:url value="/user/forgot"/>' method="post" class="singin-form">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input id="email" type="email" class="form-control" name="email">

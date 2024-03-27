@@ -6,7 +6,7 @@
                 <span class="material-icons">arrow_back_ios</span>
             </button>
 
-            <a class="navbar-brand" href="#"> Dashboard </a>
+            <a class="navbar-brand" href="#"> Tổng Quan </a>
 
             <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
                     data-toggle="collapse" data-target="#navbarSupportedContent"

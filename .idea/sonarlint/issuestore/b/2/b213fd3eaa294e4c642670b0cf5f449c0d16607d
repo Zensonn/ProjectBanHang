@@ -1,0 +1,13 @@
+
+m
+java:S1192@"KDefine a constant instead of duplicating this literal "/view-cart" 3 times.(–¨Äşÿÿÿÿ8ñøõ—Å1
+n
+java:S1192="LDefine a constant instead of duplicating this literal "/user/login" 4 times.(ô»‰ıÿÿÿÿ8òøõ—Å1
+e
+java:S1192:"HDefine a constant instead of duplicating this literal "account" 5 times.(¾»ì8óøõ—Å1
+™
+java:S1130["wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(û‰Ñ‹øÿÿÿÿ8£ùõ—Å1
+“
+java:S1130m"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(ÜÏm8§ùõ—Å1
+W
+java:S2441{":Make "User" serializable or don't store it in the session.(‘ßåî8©ùõ—Å1

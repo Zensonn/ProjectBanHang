@@ -81,7 +81,7 @@
                     <div class="slick-single-layout" style="height: inherit">
                         <div class="axil-product product-style-four">
                             <div class="thumbnail">
-                                <a href='<c:url value="/views/user/product-details.jsp"/>'>
+                                <a href='<c:url value="/product-detail?id=${product.id}"/>'>
                                     <c:url value="/image?fileName=product/${product.image!=null?product.image:'uploads/abc.jpg'}" var="imgProduct"/>
                                     <img src="${imgProduct}" alt="Product Images" >
                                 </a>
@@ -267,7 +267,7 @@
                     <div class="slick-single-layout">
                         <div class="axil-product product-style-three">
                             <div class="thumbnail">
-                                <a href='<c:url value="/views/user/product-details.jsp"/>'>
+                                <a href='<c:url value="/product-detail?id=${productSelling.id}"/>'>
                                     <c:url value="/image?fileName=product/${productSelling.image!=null?productSelling.image:'uploads/abc.jpg'}" var="imgProduct"/>
                                     <img src="${imgProduct}" alt="Product Images">
                                 </a>
@@ -608,7 +608,7 @@
                 <c:forEach items="${cartItems}" var="cartItem">
                     <li class="cart-item">
                         <div class="item-img">
-                            <a href='<c:url value="product-details.jsp"/>'>
+                            <a href='<c:url value="/product-detail?id=${cartItem.product.id}"/>'>
                                 <c:url value="/image?fileName=product/${cartItem.product.image!=null?cartItem.product.image:'uploads/abc.jpg'}" var="imgProduct"/>
                                 <img src="${imgProduct}" alt="Product Images">
                             </a>
@@ -625,23 +625,24 @@
 							</span>
                                 <span class="rating-number">(10)</span>
                             </div>
-                            <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>${cartItem.product.name}</a></h3>
-                            <div class="item-price"><span class="currency-symbol">$</span>${cartItem.product.promotionalPrice}</div>
-                            <div class="pro-qty item-quantity">
-                                <label>
-                                    <input type="number" class="quantity-input" value="15">
-                                </label>
+                            <h3 class="item-title"><a href='<c:url value="/product-detail?id=${cartItem.product.id}"/>'>${cartItem.product.name}</a></h3>
+                            <div class="item-price"><span class="currency-symbol">
+                                <c:if test="${cartItem.product.percentDiscount > 0}">
+                                            <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${cartItem.product.promotionalPrice}"/></span>
+                                    </c:if>
+                                    <c:if test="${cartItem.product.percentDiscount <= 0}">
+                                            <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${cartItem.product.price}"/></span>
+                                    </c:if>
                             </div>
                         </div>
                     </li>
                 </c:forEach>
-
             </ul>
         </div>
         <div class="cart-footer">
             <h3 class="cart-subtotal">
-                <span class="subtotal-title">Subtotal:</span>
-                <span class="subtotal-amount">$610.00</span>
+                <span class="subtotal-title">Tổng cộng:</span>
+                <span class="subtotal-amount"><fmt:formatNumber pattern="###,###đ" value="${cart.totalMoney}"/></span>
             </h3>
             <div class="group-btn">
                 <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">Xem giỏ hàng</a>

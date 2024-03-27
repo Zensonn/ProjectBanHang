@@ -10,6 +10,7 @@ import com.hcmute.team7.azshop.entity.User;
 import com.hcmute.team7.azshop.service.IUserService;
 
 import javax.inject.Inject;
+import java.util.List;
 
 public class UserServiceImpl implements IUserService {
 
@@ -28,6 +29,21 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void update(User user) {
         userDAO.update(user);
+    }
+
+    @Override
+    public List<User> findAll(String keyword, int firstResult, int maxResults) {
+        return userDAO.findAll(keyword, firstResult, maxResults);
+    }
+
+    @Override
+    public Long count() {
+        return userDAO.countAll();
+    }
+
+    @Override
+    public void ban(String email) {
+        userDAO.banUser(email);
     }
 
     @Override

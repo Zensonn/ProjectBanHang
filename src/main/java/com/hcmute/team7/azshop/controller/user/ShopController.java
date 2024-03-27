@@ -42,15 +42,16 @@ public class ShopController extends HttpServlet {
         User user = (User) session.getAttribute("account");
 
         // Lấy số lượng sản phẩm trong giỏ hàng
-//        if (user != null) {
-//            Cart cart = user.getCart();
-//            Set<CartItem> cartItems = user.getCart().getCartItems();
-//
-//            session.setAttribute("totalItemInCart", cart.getTotalItem());
-//            request.setAttribute("cartItems", cartItems);
-//        } else {
-//            session.setAttribute("totalItemInCart", 0);
-//        }
+        if (user != null) {
+            Cart cart = user.getCart();
+            Set<CartItem> cartItems = user.getCart().getCartItems();
+
+            session.setAttribute("totalItemInCart", cart.getTotalItem());
+            request.setAttribute("cartItems", cartItems);
+            request.setAttribute("cart", user.getCart());
+        } else {
+            session.setAttribute("totalItemInCart", 0);
+        }
 
 
 

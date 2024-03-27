@@ -93,6 +93,11 @@
                                             <i class="fas fa-eye mr-1"></i> Xem đơn
                                         </a>
                                     </c:when>
+                                    <c:when test="${order.status == 'CANCELED'}">
+                                        <a type="button" class="btn btn-sm view" href='<c:url value="/vendor/view-order?id=${order.id}"/>'>
+                                            <i class="fas fa-eye mr-1"></i> Xem đơn
+                                        </a>
+                                    </c:when>
                                     <c:otherwise>
                                         <a type="button" class="btn btn-sm view" href='<c:url value="/vendor/view-order?id=${order.id}"/>'>
                                             <i class="fas fa-eye mr-1"></i> Xem đơn
@@ -100,7 +105,7 @@
                                         <a type="button" class="btn btn-sm edit" href='<c:url value="/vendor/accept-order?id=${order.id}"/>'>
                                             <i class="fas fa-edit mr-1"></i> Nhận đơn
                                         </a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                            
                                         <a type="button" class="btn btn-sm trash" href='<c:url value="/vendor/cancel-order?id=${order.id}"/>'>
                                             <i class="fas fa-trash-alt mr-1"></i> Hủy đơn
                                         </a>

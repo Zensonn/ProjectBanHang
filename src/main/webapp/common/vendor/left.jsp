@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h3><img src='<c:url value="/templates/vendor/img/logo.png"/>' class="img-fluid" alt=""/><span>Fishwives design</span></h3>
+        <h3><img src='<c:url value="/templates/vendor/img/logo.png"/>' class="img-fluid" alt=""/><span>Cửa Hàng</span></h3>
     </div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="/vendor" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+            <a href="/vendor" class="dashboard"><i class="material-icons">dashboard</i><span>Tổng Quan</span></a>
         </li>
 
         <div class="small-screen navbar-display">

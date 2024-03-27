@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-@WebServlet(urlPatterns = {"/check-out", "/save-order", "/completed-order", "/submitOrder-vnpay"})
+@WebServlet(urlPatterns = {"/check-out", "/save-order", "/completed-order", "/submitOrder-vnpay", "/cancel-order"})
 public class OrderController extends HttpServlet {
 
     @Inject
@@ -31,6 +31,8 @@ public class OrderController extends HttpServlet {
         if (url.contains("check-out")) {
             checkout(request, response);
         } else if (url.contains("completed-order")) {
+            completeOrder(request, response);
+        } else if (url.contains("cancel-order")) {
             completeOrder(request, response);
         } else if (url.contains("/submitOrder-vnpay")) {
             getPay(request, response);
@@ -49,10 +51,8 @@ public class OrderController extends HttpServlet {
 
             // Kiểm tra xem có thông tin cần thiết chưa ?
             if (customer.getAddresses() == null || customer.getPhone() == null) {
-                // Đặt một danh sách orders rỗng
-                List<Orders> emptyOrdersList = new ArrayList<>();
-                request.setAttribute("orders", emptyOrdersList);
-                // Chuyển hướng đến my-account
+                // Thêm thông báo yêu cầu cập nhật thông tin cá nhân
+                session.setAttribute("message", "Vui lòng cập nhật địa chỉ và số điện thoại của bạn trước khi thanh toán.");
                 response.sendRedirect("/my-account");
             } else {
                 Cart cart = customer.getCart();
@@ -67,6 +67,7 @@ public class OrderController extends HttpServlet {
             response.sendRedirect("/user/login");
         }
     }
+
 
     protected void saveOrder(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
@@ -92,6 +93,20 @@ public class OrderController extends HttpServlet {
 
         if (user != null && user.getRole() == Role.USER) {
             orderService.completeOrder(orderId);
+            response.sendRedirect("/my-account");
+        } else {
+            response.sendRedirect("/user/login");
+        }
+    }
+
+    protected void cancelOrder(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+
+        Long orderId = Long.parseLong(request.getParameter("id"));
+
+        if (user != null && user.getRole() == Role.VENDOR) {
+            orderService.cancelOrder(orderId);
             response.sendRedirect("/my-account");
         } else {
             response.sendRedirect("/user/login");

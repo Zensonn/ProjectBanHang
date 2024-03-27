@@ -2,9 +2,14 @@ package com.hcmute.team7.azshop.service;
 
 import com.hcmute.team7.azshop.entity.User;
 
+import java.util.List;
+
 public interface IUserService {
     User findByEmail(String email);
     void update(User user);
+    List<User> findAll(String keyword, int firstResult, int maxResults);
+    Long count();
+    void ban(String email);
 
     // Các phương thức dành cho register
 

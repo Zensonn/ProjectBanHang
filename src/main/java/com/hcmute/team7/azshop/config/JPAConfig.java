@@ -9,15 +9,13 @@ public class JPAConfig {
 
     public static EntityManager getEntityManager() {
         if (emf == null) {
-            emf = Persistence.createEntityManagerFactory("default");
+            synchronized (JPAConfig.class) {
+                if (emf == null) {
+                    emf = Persistence.createEntityManagerFactory("azshop");
+                }
+            }
         }
         return emf.createEntityManager();
-    }
-
-    public static void shutdown() {
-        if (emf != null) {
-            emf.close();
-        }
     }
 }
 

@@ -96,4 +96,27 @@ public class UserDAO extends Repository<User> {
             entityManager.close();
         }
     }
+
+    public void banUser(String email) {
+        EntityManager entityManager = JPAConfig.getEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            User user = entityManager.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+                    .setParameter("email", email)
+                    .getSingleResult();
+
+            if (user != null) {
+                user.setEmailActive(false);
+                entityManager.merge(user);
+                transaction.commit();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            transaction.rollback();
+            throw e;
+        } finally {
+            entityManager.close();
+        }
+    }
 }

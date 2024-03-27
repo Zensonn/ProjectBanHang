@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h3><img src='<c:url value="/templates/admin/img/logo.png"/>' class="img-fluid" alt=""/><span>Fishwives design</span></h3>
+        <h3><img src='<c:url value="/templates/admin/img/logo.png"/>' class="img-fluid" alt=""/><span>Quản Trị Viên</span></h3>
     </div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="/admin" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+            <a href='<c:url value="/admin/user"/>' class="dashboard"><i class="material-icons">dashboard</i><span>Tổng Quan</span></a>
         </li>
 
         <div class="small-screen navbar-display">
@@ -58,10 +58,10 @@
         </li>
 
         <li class="">
-            <a href="#"><i class="material-icons">date_range</i><span>Cửa Hàng</span></a>
+            <a href='<c:url value="/admin/user"/>'><i class="material-icons">date_range</i><span>Người dùng</span></a>
         </li>
         <li class="">
-            <a href="#"><i class="material-icons">library_books</i><span>Người dùng</span></a>
+            <a href='<c:url value="/user/logout"/>'><i class="material-icons">logout</i><span>Dăng Xuất</span></a>
         </li>
     </ul>
 </nav>

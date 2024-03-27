@@ -124,7 +124,21 @@
 <!-- Nút điều hướng trang -->
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-end">
-        <!-- ... (pagination buttons) ... -->
+        <li class="page-item">
+            <a class="page-link" href="?page=<c:out value='${currentPage - 1}'/>&pageSize=<c:out value='${pageSize}&keyword=${keyword}'/>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <c:forEach begin="1" end="${totalPage}" var="page">
+            <li class="page-item">
+                <a class="page-link" href="?page=<c:out value='${page}'/>&pageSize=<c:out value='${pageSize}&keyword=${keyword}'/>"><c:out value="${page}"/></a>
+            </li>
+        </c:forEach>
+        <li class="page-item">
+            <a class="page-link" href="?page=<c:out value='${currentPage + 1}'/>&pageSize=<c:out value='${pageSize}&keyword=${keyword}'/>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
     </ul>
 </nav>
 

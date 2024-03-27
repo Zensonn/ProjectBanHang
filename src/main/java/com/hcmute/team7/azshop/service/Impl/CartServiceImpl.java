@@ -2,7 +2,6 @@ package com.hcmute.team7.azshop.service.Impl;
 
 import com.hcmute.team7.azshop.DAO.CartDAO;
 import com.hcmute.team7.azshop.DAO.CartItemDAO;
-import com.hcmute.team7.azshop.DAO.UserDAO;
 import com.hcmute.team7.azshop.entity.Cart;
 import com.hcmute.team7.azshop.entity.CartItem;
 import com.hcmute.team7.azshop.entity.Product;
@@ -37,6 +36,7 @@ public class CartServiceImpl implements ICartService {
             cartItem = new CartItem();
             cartItem.setProduct(product);
             cartItem.setQuantity(quantity);
+            cartItem.setTotalPrice(calculateTotalPrice(product, quantity));
             cartItem.setCart(cart);
             cartItems.add(cartItem);
 

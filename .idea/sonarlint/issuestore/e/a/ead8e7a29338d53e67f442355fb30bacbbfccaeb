@@ -1,0 +1,24 @@
+
+F
+java:S3740Œ"/Provide the parametrized type for this generic.(›µ´ê
+F
+java:S3740Œ"/Provide the parametrized type for this generic.(›µ´ê
+K
+java:S3740"/Provide the parametrized type for this generic.(ÔöŠÿÿÿÿÿ
+n
+java:S1192A"LDefine a constant instead of duplicating this literal "/user/login" 3 times.(ô»‰ıÿÿÿÿ8ÏñÓ’Å1
+i
+java:S11926"LDefine a constant instead of duplicating this literal "/my-account" 3 times.(Ş€¬Ù8ÏñÓ’Å1
+e
+java:S1192,"HDefine a constant instead of duplicating this literal "account" 3 times.(¾»ì8ĞñÓ’Å1
+f	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í‘ğ
+k	java:S117i"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Îº‡úÿÿÿÿ
+f	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ºÖ‰
+e	java:S117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¿;
+k	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–âÚ›ıÿÿÿÿ
+k	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Ñ¹²ùÿÿÿÿ
+l	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âò“øşÿÿÿÿ
+f	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó²Ş
+l	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à†Ø«şÿÿÿÿ
+E
+java:S1905“")Remove this unnecessary cast to "String".(­Óµûÿÿÿÿ

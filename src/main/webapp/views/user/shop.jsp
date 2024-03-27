@@ -95,13 +95,13 @@
                         <div class="axil-shop-top mb--40">
                             <div class="category-select align-items-center justify-content-lg-end justify-content-between">
                                 <!-- Start Single Select  -->
-                                <span class="filter-results">Showing 1-12 of 84 results</span>
+                                <span class="filter-results">Hiển thị sản phẩm</span>
                                 <label>
-                                    <select class="single-select">
-                                        <option>Short by Latest</option>
-                                        <option>Short by Oldest</option>
-                                        <option>Short by Name</option>
-                                        <option>Short by Price</option>
+                                    <select class="single-select">32`<q>`1</q>
+                                        <option>Mới nhất</option>
+                                        <option>Cũ nhất</option>
+                                        <option>Theo Tên</option>
+                                        <option>Theo Giá</option>
                                     </select>
                                 </label>
                                 <!-- End Single Select  -->
@@ -324,7 +324,7 @@
                 <c:forEach items="${cartItems}" var="cartItem">
                     <li class="cart-item">
                         <div class="item-img">
-                            <a href='<c:url value="product-details.jsp"/>'>
+                            <a href='<c:url value="/product-detail?id=${cartItem.product.id}"/>'>
                                 <c:url value="/image?fileName=product/${cartItem.product.image!=null?cartItem.product.image:'uploads/abc.jpg'}" var="imgProduct"/>
                                 <img src="${imgProduct}" alt="Product Images">
                             </a>
@@ -339,10 +339,16 @@
 								<i class="fas fa-star"></i>
 								<i class="fas fa-star"></i>
 							</span>
-                                <span class="rating-number">(10)</span>
                             </div>
-                            <h3 class="item-title"><a href='<c:url value="product-details.jsp"/>'>${cartItem.product.name}</a></h3>
-                            <div class="item-price"><span class="currency-symbol">$</span>${cartItem.product.promotionalPrice}</div>
+                            <h3 class="item-title"><a href='<c:url value="/product-detail?id=${cartItem.product.id}"/>'>${cartItem.product.name}</a></h3>
+                            <div class="item-price"><span class="currency-symbol">
+                                <c:if test="${cartItem.product.percentDiscount > 0}">
+                                            <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${cartItem.product.promotionalPrice}"/></span>
+                                    </c:if>
+                                    <c:if test="${cartItem.product.percentDiscount <= 0}">
+                                            <span class="price current-price"><fmt:formatNumber pattern="###,###đ" value="${cartItem.product.price}"/></span>
+                                    </c:if>
+                            </div>
                         </div>
                     </li>
                 </c:forEach>
@@ -351,12 +357,12 @@
         </div>
         <div class="cart-footer">
             <h3 class="cart-subtotal">
-                <span class="subtotal-title">Subtotal:</span>
-                <span class="subtotal-amount">$610.00</span>
+                <span class="subtotal-title">Tổng cộng:</span>
+                <span class="subtotal-amount"><fmt:formatNumber pattern="###,###đ" value="${cart.totalMoney}"/></span>
             </h3>
             <div class="group-btn">
-                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
-                <a href='<c:url value="checkout.jsp"/>' class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
+                <a href='<c:url value="/view-cart"/>' class="axil-btn btn-bg-primary viewcart-btn">Xem giỏ hàng</a>
+                <a href='<c:url value="/check-out"/>' class="axil-btn btn-bg-secondary checkout-btn">Thanh toán</a>
             </div>
         </div>
     </div>
